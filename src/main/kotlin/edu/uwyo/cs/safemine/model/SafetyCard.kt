@@ -3,9 +3,9 @@ package edu.uwyo.cs.safemine.model
 import java.time.LocalDateTime
 
 data class SafetyCard(
-        val employeeId: CharSequence,
+        val employee: Employee,
         val date: LocalDateTime,
-        val jobDescription: CharSequence,
-        val jobNumber: CharSequence,
-        val risks: Map<Risk, CharSequence>
+        val jobDescription: String,
+        val jobNumber: String,
+        val risks: Map<Risk, String>
 )
