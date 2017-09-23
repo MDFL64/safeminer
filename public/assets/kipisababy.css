@@ -1,0 +1,26 @@
+.butter {
+  text-align: justify;
+}
+
+.button { 
+  width:auto; 
+}
+.col.s12 > .btn {
+   width: 300%;
+}
+
+.fullwidth {
+	background-color: red;
+	width:100%;
+	margin-left:0;
+	margin-right:0;
+	padding-left:10;
+	padding-right:10;
+	display:block;
+	text-align:left; /*This will result in centering the link text, which is probably what you want -brianjohnsondesign.com*/
+}
+
+.button {
+	width:100%;
+	background-color: red;
+}

@@ -3,8 +3,10 @@
 <html>
 <head>
   	 <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" type="text/css" href="./assets/kipsisababy.css">
      <link rel="stylesheet" href="./assets/materialize.min.css">
      <link rel="stylesheet" href="./assets/safetyicons/font/flaticon.css">
+     
      
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <!-- Compiled and minified JavaScript -->
@@ -23,11 +25,11 @@
     <div class="row">
       <div class="input-field col s6">
         <input id="empName" type="text" class="validate">
-        <label for="empName">Name</label>
+        <label for="empName">Employee ID</label>
       </div>
       <div class="input-field col s6">
         <input id="empName" type="text" class="validate">
-        <label for="empName">Job name</label>
+        <label for="empName">Job Location</label>
       </div>
     </div>
     <div class="row">
@@ -36,51 +38,39 @@
         <label for="empName">Job description</label>
       </div>
     </div>
-      <ul class="collapsible" data-collapsible="accordion">
-      <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Slips, trips and falls</div>
-        <div class="collapsible-body">  
-          <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">mode_edit</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                  <label for="icon_prefix2">Describe how you plan to minimize this risk</label>
-                </div>
-              </div>
-            </form>
-        </div></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-        <div class="collapsible-body">  
-          <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">mode_edit</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                  <label for="icon_prefix2">Describe how you plan to minimize this risk</label>
-                </div>
-              </div>
-            </form>
-        </div></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-    </ul>
   </form>
 
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1"><i class="flaticon-acid-falling-on-hand"></i>Cuts</a>
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Modal</a>
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Modal</a>
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Modal</a>
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Modal</a>
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Modal</a>
-  <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Modal</a>
+  <div class="row">
+      
+    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-acid-falling-on-hand"></i>Acids</a></div>
+
+    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-protection-gloves"></i>Sharp Edges</a></div> 
+
+    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-silhouette-with-safety-headphone"></i>Loud Noises</a></div>
+
+    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-electrocution-risk-sign"></i>Electrocution</a></div>
+
+  </div>
+
+  <div class="row">
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="left-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>  
+  </div>
+
+  <div class="row">
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="left-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+
+    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>  
+  </div>
 
   <!-- Modal -->
   <div id="modal1" class="modal bottom-sheet">
@@ -89,7 +79,7 @@
       <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
 </div>
