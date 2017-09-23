@@ -3,7 +3,7 @@ const ObjectID = require('mongodb').ObjectID;
 module.exports.get_risks = (req, res) => {
     const db = req.db;
 
-    db.collction("risks")
+    db.collection("risks")
         .find()
         .toArray()
         .then(result => {
