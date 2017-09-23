@@ -1,0 +1,20 @@
+NEW PAGE FORMAT:
+
+TOP: IDENTIFICATION:
+--------------------
+NAME:
+DATE:
+JOB NUMBER:
+JOB TYPE: (WELDING ETC)
+
+MID: PICTOGRAPHS:
+-------------------
+(Pictographs of common risks and the option to add risks via text)
+
+BOTTOM: RISK ANALYSIS:
+----------------------
+(Text box for how the employee plans to address risk)
+
+SUBMIT
+----------
+This will send this info and geo data to the server.
