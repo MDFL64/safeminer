@@ -47,8 +47,7 @@ Users (table) {
   Password : "password of an employee; use bcrypt to hash and compare"
   Name     : "name of an employee; String",
   Position : "job position of an employee; String",
-  isAdmin  : "if the user is admin or not; Bool",
-  Age      : "age of an employee",
+  isAdmin  : "if the user is admin or not; Bool",  
   Points   : "points employee got so far",
   isDeleted: "bool"
 }
