@@ -3,7 +3,7 @@ const ObjectID = require('mongodb').ObjectID;
 module.exports.get_safetycard_all = (request, response) => {
   const db = request.db;
 
-  db.collection("reports")
+  db.collection("SafetyCards")
     .find(
       {
         isDeleted: false,
@@ -32,7 +32,7 @@ module.exports.get_safetycard_one = (request, response) => {
   const card_id = request.params.id;
 
   if (ObjectID.isValid(card_id)) {
-    db.collection("reports")
+    db.collection("SafetyCards")
       .findOne(
         {
           _id : ObjectID(card_id),
@@ -65,43 +65,21 @@ module.exports.post_safetycard = (request, response) => {
     const db = request.db
     const date_today = new Date();
 
-    const employee_id = request.body.employeeId;
-
-    db.collection("users")
-      .findOne(
-        {
-          _id : ObjectID(employee_id),
-          isDeleted : false
-        },
-        {
-          _id : 0,
-          isDeleted: 0
-        }
-      )
-      .then(result => {
-        if (result) {
-          db.collection("reports")
-              .insertOne({
-                  EmployeeID: ObjectID(employee_id),
-                  DateCreated: date_today,
-                  DateModified: date_today,
-                  JobName: request.body.jobName,
-                  JobDescription: request.body.jobDescription,
-                  Dangers: request.body.dangers,
-                  Geolocation: null,
-                  isDeleted: false
-              })
-              .then(result => {
-                  response.status(201).send(result);
-              })
-              .catch(err => {
-                  response.status(500).send({ error: err });
-              });
-        }
-        else {
-          res.status(404).send({
-            error: "employee not found"
-          });
-        }
-      })
+    db.collection("SafetyCards")
+        .insertOne({
+            EmployeeID: request.body.EmployeeID,
+            DateCreated: date_today,
+            DateModified: date_today,
+            JobName: request.body.JobName,
+            JobDescription: request.body.JobDescription,
+            Dangers: request.body.Dangers,
+            Geolocation: null,
+            isDeleted: false
+        })
+        .then(result => {
+            response.status(201).send(result);
+        })
+        .catch(err => {
+            response.status(500).send({ error: err });
+        });
 }
