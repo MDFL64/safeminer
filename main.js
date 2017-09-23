@@ -66,3 +66,4 @@ app.post('/api/users', users.post_users);
 /* Reports */
 app.get('/api/reports', reports.get_safetycard_all);
 app.get('/api/reports/:id', reports.get_safetycard_one);
+app.post('/api/reports', reports.post_safetycard)

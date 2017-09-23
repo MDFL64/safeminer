@@ -3,7 +3,7 @@ const ObjectID = require('mongodb').ObjectID;
 module.exports.get_safetycard_all = (request, response) => {
   const db = request.db;
 
-  db.collection("reports")
+  db.collection("SafetyCards")
     .find(
       {
         isDeleted: false,
@@ -32,7 +32,7 @@ module.exports.get_safetycard_one = (request, response) => {
   const card_id = request.params.id;
 
   if (ObjectID.isValid(card_id)) {
-    db.collection("reports")
+    db.collection("SafetyCards")
       .findOne(
         {
           _id : ObjectID(card_id),
@@ -61,13 +61,25 @@ module.exports.get_safetycard_one = (request, response) => {
   }
 }
 
-// module.exports.post_safetycard = (request, response) => {
-//   const db = req.db;
-//
-//   const employee_id   =
-//   const date_created  =
-//   const date_modified =
-//   const job_name      =
-//   const job_desc      =
-//   const Dangers
-// }
+module.exports.post_safetycard = (request, response) => {
+    const db = req.db
+    const date_today = new Date();
+
+    db.collection("SafetyCards")
+        .insertOne({
+            EmployeeID: req.body.employeeId,
+            DateCreated: date_today,
+            DateModified: date_today,
+            JobName: req.body.jobName,
+            JobDescription: req.body.jobDescription,
+            Dangers: req.body.dangers,
+            Geolocation: null,
+            isDeleted: false
+        })
+        .then(result => {
+            response.status(201).send(result);
+        })
+        .catch(err => {
+            response.status(500).send({ error: err });
+        });
+}
