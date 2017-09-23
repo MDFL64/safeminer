@@ -21,8 +21,22 @@ Should you have any questions - ask! :)
 ### Authentication
 
 - `GET api/login`
+
+Renders page
+
 - `POST api/login`
+
+Necessary fields:
+
+```
+Email: String,
+Password: String
+```
+
 - `GET api/register`
+
+Renders page
+
 - `POST api/register`
 
 ### SafetyCard
