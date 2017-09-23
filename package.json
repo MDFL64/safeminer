@@ -1,0 +1,26 @@
+{
+  "name": "safemine",
+  "version": "1.0.0",
+  "description": "safety form web app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/birdbrainswagtrain/safemine.git"
+  },
+  "author": "uwyo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/birdbrainswagtrain/safemine/issues"
+  },
+  "homepage": "https://github.com/birdbrainswagtrain/safemine#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  }
+}
