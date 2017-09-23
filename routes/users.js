@@ -4,7 +4,11 @@ module.exports.get_users = (req, res) => {
   const db = req.db;
 
   db.collection("users")
-    .find()
+    .find(
+      {
+        isDeleted: false
+      }
+    )
     .toArray()
     .then(result => {
       res.status(200).send({
