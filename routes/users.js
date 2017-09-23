@@ -15,7 +15,7 @@ module.exports.get_users = (req, res) => {
       res.status(500).send({
         err
       })
-    })
+  });
 }
 
 module.exports.post_users = (req, res) => {

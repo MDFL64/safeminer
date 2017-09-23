@@ -13,7 +13,7 @@ class MyEmitter extends EventEmitter {}
 const dbEmitter = new MyEmitter();
 
 /* For environment variable */
-require('dotenv').config()
+require('dotenv').config();
 
 const app = express();
 
