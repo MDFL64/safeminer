@@ -2,7 +2,6 @@
 
 <html>
 <head>
-	<title>SafeMine | Home</title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" type="text/css" href="./assets/kipsisababy.css">
   <link rel="stylesheet" href="./assets/materialize.min.css">
@@ -20,42 +19,40 @@
 </head>
 
 <body>
-	<div class="container">
+  <div class="container">
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">SafeMine</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li class="active"><a href="safemine.html">Home</a></li>
+          <li><a href="safemine.html">Home</a></li>
           <li><a href="index.html">Safety Report</a></li>
           <li><a href="supervisor.html">Supervisor View</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="radar.html">Safety Radar</a></li>
-          <li><a href="analytics.html">Analytics</a></li>
+          <li class="active"><a href="notify.html">Safety View</a></li>
         </ul>
+
         
         <ul class="side-nav" id="mobile-demo">
           <li><a href="safemine.html">Home</a></li>
           <li><a href="index.html">Safety Report</a></li>
           <li><a href="supervisor.html">Supervisor View</a></li>
-          <li><a href="radar.html">Safety Radar</a></li>
-          <li><a href="analytics.html">Analytics</a></li>
         </ul>
    
       </div>
     </nav>
-    <h1>We do wicked amounts of cool stuff</h1>
-    <!-- Fill in stuff about what we do -->
+  </div>
 
-   </div>
+  <script>
+    $(document).ready(function(){
+       $(".button-collapse").sideNav();
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
+  </script>  
 
-<script>
-  $(document).ready(function(){
-     $(".button-collapse").sideNav();
-    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
-  });
-</script>
+
+  </div>
 </body>
 </html>
