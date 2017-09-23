@@ -9,9 +9,7 @@ const session       = require('express-session');
 const bcrypt        = require("bcrypt");
 
 /* Exports */
-const users   = require('./routes/users');
 const reports = require('./routes/safety_cards');
-
 const auth    = require('./routes/auth');
 
 /* For letting database turn on first. Then, server will start */

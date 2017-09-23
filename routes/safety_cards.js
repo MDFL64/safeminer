@@ -1,3 +1,4 @@
+"use strict";
 const ObjectID = require('mongodb').ObjectID;
 
 module.exports.get_safetycard_all = (request, response) => {
