@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/kipsisababy.css">
   <link rel="stylesheet" href="./assets/materialize.min.css">
   <link rel="stylesheet" href="./assets/safetyicons/font/flaticon.css">
+  <link rel="stylesheet" href="https://github.com/fathomlabs/materialize-markdown/blob/master/css/bootstrap-markdown.min.css">
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -45,7 +46,17 @@
    
       </div>
     </nav>
-    <h1>We do wicked amounts of cool stuff</h1>
+
+    <div class="parallax-container">
+      <div class="parallax"><img class="responsive-img" src="https://static.pexels.com/photos/33343/building-joy-planning-plans.jpg"></div>
+    </div>
+    <h2 class="center-align">Because safety shouldn't be a hassle</h2>
+    <div class="divider"></div>
+
+    <p class="flow-text">
+      SafeMine is an agile platform for tomorrow's miners, allowing employees to quickly and easily identify mission critical hazards on the jobsite.
+    </p>
+  
     <!-- Fill in stuff about what we do -->
     
     <footer class="page-footer blue-grey darken-2">
@@ -68,7 +79,8 @@
           
           
         </div>
-      </div>
+
+
       <div class="footer-copyright">
         <div class="container">
         © 2017 Magical Unicorn Dev Group
@@ -82,6 +94,7 @@
      $(".button-collapse").sideNav();
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+    $('.parallax').parallax();
   });
 </script>
 </body>
