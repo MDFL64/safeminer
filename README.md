@@ -1,3 +1,7 @@
+# Please follow README as our specs/endpoints/db is defined here.
+
+Should you have any questions - ask! :)
+
 # Node JS Rest API
 
 ## Structure WIP
