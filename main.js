@@ -5,7 +5,8 @@ const mongodb    = require("mongodb");
 const ObjectID   = mongodb.ObjectID;
 
 /* Exports */
-const users = require('./routes/users');
+const users   = require('./routes/users');
+const reports = require('./routes/safety_cards');
 
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
@@ -58,5 +59,10 @@ dbEmitter.once("dbready", () => {
 
 /*   Routes!   */
 
+/* Users */
 app.get('/api/users', users.get_users);
 app.post('/api/users', users.post_users);
+
+/* Reports */
+app.get('/api/reports', reports.get_safetycard_all);
+app.get('/api/reports/:id', reports.get_safetycard_one);
