@@ -65,8 +65,7 @@ Users (table) {
   Email    : "email of an employee; email type w/ regex",
   Password : "password of an employee; use bcrypt to hash and compare"
   Name     : "name of an employee; String",
-  Position : "job position of an employee; String",
-  isAdmin  : "if the user is admin or not; Bool",  
+  Position : "job position of an employee; String",  
   Points   : "points employee got so far",
   isDeleted: "bool"
 }
