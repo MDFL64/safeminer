@@ -20,6 +20,8 @@
 
 ## Database structure
 
+Instructions.
+
 ```
 SafetyCard (table) {
   _id            : "id of safety card; MongoDB_ID",
@@ -35,7 +37,8 @@ SafetyCard (table) {
           Description : "description of steps to prevent this hazard; String",          
       }
   ],
-  Geolocation    : "location of the area; TBD"
+  Geolocation    : "location of the area; TBD",
+  isDeleted      : "bool"
 }
 
 Users (table) {
@@ -46,7 +49,8 @@ Users (table) {
   Position : "job position of an employee; String",
   isAdmin  : "if the user is admin or not; Bool",
   Age      : "age of an employee",
-  Points   : "points employee got so far"
+  Points   : "points employee got so far",
+  isDeleted: "bool"
 }
 
 ```
