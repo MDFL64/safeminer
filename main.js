@@ -4,13 +4,16 @@ const bodyParser = require("body-parser");
 const mongodb    = require("mongodb");
 const ObjectID   = mongodb.ObjectID;
 
+/* Exports */
+const users = require('./routes/users');
+
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
 class MyEmitter extends EventEmitter {}
 const dbEmitter = new MyEmitter();
 
 /* For environment variable */
-require('dotenv').config();
+require('dotenv').config()
 
 const app = express();
 
@@ -49,3 +52,16 @@ dbEmitter.once("dbready", () => {
         console.log("App now running on port", port);
     });
 });
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+/*   Routes!   */
+
+app.get('/', (req, res) => {
+  res.status(200).send({
+    hello : "world"
+  });
+});
+
+app.get('/api/users', users.get_users);
+app.post('/api/users', users.post_users);
