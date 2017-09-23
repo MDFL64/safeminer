@@ -62,17 +62,17 @@ module.exports.get_safetycard_one = (request, response) => {
 }
 
 module.exports.post_safetycard = (request, response) => {
-    const db = req.db
+    const db = request.db
     const date_today = new Date();
 
     db.collection("SafetyCards")
         .insertOne({
-            EmployeeID: req.body.employeeId,
+            EmployeeID: request.body.employeeId,
             DateCreated: date_today,
             DateModified: date_today,
-            JobName: req.body.jobName,
-            JobDescription: req.body.jobDescription,
-            Dangers: req.body.dangers,
+            JobName: request.body.jobName,
+            JobDescription: request.body.jobDescription,
+            Dangers: request.body.dangers,
             Geolocation: null,
             isDeleted: false
         })
