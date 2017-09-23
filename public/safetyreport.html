@@ -16,6 +16,11 @@
   <link href="./assets/icon" rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .parallax-container {
+      height: 300px;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,11 +51,12 @@
       </div>
     </nav>
     <!-- TODO: Add card so this looks less ugly -->
-    <div class="section">
-      <img class="responsive-img z-depth-3" src="http://www.complyright.com/PublishingImages/articles/safety/oshajobsafety.jpg">
+    <div class="parallax-container">
+      <div class="parallax"><img class="responsive-img" src="https://static.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg"></div>
+    </div>
     
-    <h2>Use this page to start a new Safety Report or review your existing reports!</h2></div>
-    <a class="waves-effect waves-light btn blue-grey lighten-2" href="index.html"><i class="material-icons left">create</i>Create new Safety Report</a><br><br>
+    <h3>Start a new or review existing safety reports</h3>
+    <a class="waves-effect waves-light btn yellow darken-1" href="index.html"><i class="material-icons left">create</i><span class="grey-text text-darken-2">Create new Safety Report</span></a><br><br>
     <div class="section">
     <h3>Your safety reports</h3>
     <div class="divider"></div><br>
@@ -107,6 +113,7 @@
        $(".button-collapse").sideNav();
       // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
       $('.modal').modal();
+      $('.parallax').parallax();
     });
   </script>  
 
