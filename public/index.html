@@ -20,7 +20,7 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-    
+
 <body>
   <div class="container">
 
@@ -37,7 +37,7 @@
           <li><a href="radar.html">Safety Radar</a></li>
           <li><a href="analytics.html">Analytics</a></li>
         </ul>
-        
+
         <ul class="side-nav red lighten-2" id="mobile-demo">
           <li><h3 class="center-align"><a href="safemine.html">Home</a></h3></li>
           <li><h3 class="center-align"><a href="safetyreport.html">Safety Report</a></h3></li>
@@ -45,107 +45,509 @@
           <li><h3 class="center-align"><a href="radar.html">Safety Radar</a></h3></li>
           <li><h3 class="center-align"><a href="analytics.html">Analytics</a></h3></li>
         </ul>
-   
+
       </div>
     </nav><br>
     <a class="btn yellow darken-1" href="safetyreport.html"><span class="grey-text text-darken-2">Back to Safety Reports</span></a><br>
-  <form action="file:///action_page.php">
+  <form action="#">
     <div class="row">
       <div class="input-field col s6">
-        <input id="empName" type="text" class="validate">
-        <label for="empName">Employee ID</label>
+        <input id="empID" type="text" class="validate">
+        <label for="empID">Employee ID</label>
       </div>
       <div class="input-field col s6">
-        <input id="empName" type="text" class="validate">
-        <label for="empName">Job Location</label>
+        <input id="jobName" type="text" class="validate">
+        <label for="jobName">Job Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="empName" type="text" class="validate">
-        <label for="empName">Job description</label>
+        <input id="jobDesc" type="text" class="validate">
+        <label for="jobDesc">Job Description</label>
       </div>
     </div>
   </form>
 
   <div class="row"> <!-- This is decent... -->
-      
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-acid-falling-on-hand"></i>Acids</a></div>
+
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal0"><i class="flaticon-acid-falling-on-hand"></i>Acids</a></div>
 
     <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-protection-gloves"></i>Sharp Edges</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-silhouette-with-safety-headphone"></i>Loud Noises</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal2"><i class="flaticon-silhouette-with-safety-headphone"></i>Loud Noises</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-electrocution-risk-sign"></i>Electrocution</a></div>
-      
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-safety-glasses"></i>Eye Injury</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal3"><i class="flaticon-electrocution-risk-sign"></i>Electrocution</a></div>
+
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal4"><i class="flaticon-safety-glasses"></i>Eye Injury</a></div>
   <!--</div>
 
   <div class="row"> <!-- This is decent... -->
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-rock-landslide-safety-sign"></i>Rockslide</a></div> 
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal5"><i class="flaticon-rock-landslide-safety-sign"></i>Rockslide</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-worker-with-harness"></i>Fall Danger</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal6"><i class="flaticon-worker-with-harness"></i>Fall Danger</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-fire-extinguisher"></i>Fire</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal7"><i class="flaticon-fire-extinguisher"></i>Fire</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-worker-silhouette"></i>Head injury</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal8"><i class="flaticon-worker-silhouette"></i>Head injury</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-loaded-truck-side-view"></i>Heavy Eqpt</a></div> 
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal9"><i class="flaticon-loaded-truck-side-view"></i>Heavy Eqpt</a></div>
   <!--</div>
 
   <div class="row"> <!-- This is decent... -->
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-locked-padlock-with-chain"></i>L.O.T.O.</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal10"><i class="flaticon-locked-padlock-with-chain"></i>L.O.T.O.</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-gas-mask"></i>Toxic Fumes</a></div>
-      
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-sprained-ankle"></i>Slip and Trips</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal11"><i class="flaticon-gas-mask"></i>Toxic Fumes</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-hook-hanging-material"></i>Suspended Loads</a></div> 
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal12"><i class="flaticon-sprained-ankle"></i>Slip and Trips</a></div>
 
-    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal1"><i class="flaticon-face-shield"></i>Welding</a></div>
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal13"><i class="flaticon-hook-hanging-material"></i>Suspended Loads</a></div>
+
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal14"><i class="flaticon-face-shield"></i>Welding</a></div>
+
+    <div class="col s12 m4 l3"><a class="modal-trigger btn-large red" href="#modal15"><i class="flaticon-traffic-cones"></i>Other</a></div>
   </div>
 
   <div class="center-align"><a class="waves-effect waves-light btn modal-trigger yellow darken-2" href="#modalSubmit"><span class="grey-text text-darken-2">Submit</span><i class="material-icons right">send</i></a></div><br>
 
-  <!-- Modal -->
-  <div id="modal1" class="modal bottom-sheet">
+  <!-- Modal template -->
+  <div id="modal0" class="modal bottom-sheet">
     <div class="modal-content">
       <div class="container">
         <div class="col s12 m6">
-          <h5>This hazard exists</h5>
+          <h5>Does this hazard apply to you or others?</h5>
         </div>
         <div class="col s12 m6">
-          <div class="switch">
-            <label>
-              No
-              <input type="checkbox">
-              <span class="lever"></span>
-              Yes
-            </label>
-          </div>
+          <input type="checkbox" class="filled-in" id="check0" />
+          <label for="check0">Check if this hazard applies</label>
         </div>
 
         <form action="#">
           <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
           <h5 class="range-field">
-           <input type="range" id="test5" min="0" max="10" />
+           <input type="range" min="0" max="10" id="range0" />
           </h5>
         </form>
         <div class="input-field col s6">
-          <h5>Identify the hazard and steps to prevent the hazard</h5>
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text0"></textarea>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
       </div><br>
     </div>
   </div>
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check1" />
+          <label for="check1">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range1" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text1"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal2" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check2" />
+          <label for="check2">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range2" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text2"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal3" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check3" />
+          <label for="check3">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range3" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text3"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal4" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check4" />
+          <label for="check4">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range4" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text4"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal5" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check5" />
+          <label for="check5">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range5" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text5"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal6" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check6" />
+          <label for="check6">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range6" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text6"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal7" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check7" />
+          <label for="check7">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range7" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text7"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal8" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check8" />
+          <label for="check8">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range8" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text8"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal9" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check9" />
+          <label for="check9">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range9" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text9"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal10" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check10" />
+          <label for="check10">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range10" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text10"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal11" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check11" />
+          <label for="check11">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range11" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text11"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal12" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check12" />
+          <label for="check12">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range12" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text12"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal13" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check13" />
+          <label for="check13">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range13" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text13"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal14" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check14" />
+          <label for="check14">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range14" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text14"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+  <div id="modal15" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>Does this hazard apply to you or others?</h5>
+        </div>
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="check15" />
+          <label for="check15">Check if this hazard applies</label>
+        </div>
+
+        <form action="#">
+          <h5>On a scale of 1 to 10, how dangerous is this hazard?</h5>
+          <h5 class="range-field">
+           <input type="range" min="0" max="10" id="range15" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>How do you plan to address this hazard?</h5>
+          <textarea class="materialize-textarea" id="text15"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Done</a>
+      </div><br>
+    </div>
+  </div>
+
   <footer class="page-footer blue-grey darken-2">
       <div class="container">
         <div class="row">
-          
+
             <h5 class="white-text center-align">SafeMine V0.1</h5>
 
             <div class="col l3 s6"><p class="center-align">
@@ -159,16 +561,15 @@
 
             <div class="col l3 s6"><p class="center-align">
             <a class="grey-text text-lighten-3" href="analytics.html">Analytics</a></p></div>
-          
-          
+
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-        © 2017 Magical Unicorn Dev Group
+        &copy; 2017 Magical Unicorn Dev Group
         </div>
       </div>
-    </footer>  
+    </footer>
 </div>
 
 <div id="modalSubmit" class="modal">
@@ -178,16 +579,44 @@
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Disagree</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="submitForm()">Agree</a>
     </div>
   </div>
-  
+
 <script>
   $(document).ready(function(){
-     $(".button-collapse").sideNav();
+      $("#empID").focus();
+
+    $(".button-collapse").sideNav();
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+
+  function submitForm() {
+      var request = {
+          EmployeeID: $("#empID")[0].value,
+          JobName: $("#jobName")[0].value,
+          JobDescription: $("#jobDesc")[0].value,
+          Dangers: [],
+          Geolocation: null
+      };
+      for (i = 0; i < 16; i++) {
+          if (!$("#check" + i)[0].checked) {
+              continue;
+          }
+          request.Dangers.push({
+              Type: i,
+              Scale: $("#range" + i)[0].value,
+              Description: $("#text" + i)[0].value
+          });
+      }
+      $.ajax({
+          type: "POST",
+          dataType: "json",
+          url: "http://localhost:8080/api/reports",
+          success: function(data) { alert("I think it worked. I think." + data.toString()); }
+      });
+  }
 </script>
-  
+
 </body></html>
