@@ -19,6 +19,7 @@ const app = express();
 
 /*    Middlewares   */
 app.use(bodyParser.json());
+app.use('/', express.static(__dirname + "/public"));
 
 /*   DB connection  */
 const mongodb_uri = process.env.MONGODB_URI;
