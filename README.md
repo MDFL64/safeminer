@@ -40,6 +40,8 @@ SafetyCard (table) {
 
 Users (table) {
   _id      : "id of an employee; relates to EmployeeID",
+  Email    : "email of an employee; email type w/ regex",
+  Password : "password of an employee; use bcrypt to hash and compare"
   Name     : "name of an employee; String",
   Position : "job position of an employee; String",
   isAdmin  : "if the user is admin or not; Bool",
