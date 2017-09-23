@@ -57,11 +57,5 @@ dbEmitter.once("dbready", () => {
 
 /*   Routes!   */
 
-app.get('/', (req, res) => {
-  res.status(200).send({
-    hello : "world"
-  });
-});
-
 app.get('/api/users', users.get_users);
 app.post('/api/users', users.post_users);
