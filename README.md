@@ -6,17 +6,17 @@
 
 ### Authentication
 
-`GET api/login`
-`POST api/login`
-`GET api/register`
-`POST api/register`
+- `GET api/login`
+- `POST api/login`
+- `GET api/register`
+- `POST api/register`
 
 ### SafetyCard
 
-`GET api/reports`
-`POST api/reports`
-`PUT api/reports/:id`
-**LATER** `DELETE api/reports/:id`
+- `GET api/reports`
+- `POST api/reports`
+- `PUT api/reports/:id`
+- **LATER** `DELETE api/reports/:id`
 
 ## Database structure
 
