@@ -9,6 +9,13 @@ JOB TYPE: (WELDING ETC)
 MID: PICTOGRAPHS:
 -------------------
 (Pictographs of common risks and the option to add risks via text)
+Common risks:
+STF
+LOTO
+FIRE
+Eye HAzard
+Crush
+
 
 BOTTOM: RISK ANALYSIS:
 ----------------------
