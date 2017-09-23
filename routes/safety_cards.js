@@ -127,7 +127,7 @@ module.exports.post_safetycard = (request, response) => {
             });
           }
           else {
-            const safety_card = {
+            let safety_card = {
                 EmployeeID: ObjectID(employee_id),
                 DateCreated: date_today,
                 DateModified: date_today,

@@ -54,7 +54,7 @@ passport.use(new LocalStrategy({
             bcrypt.compare(pass,user.Password,function(err,same) {
                 if (err)
                     return done(err);
-                
+
                 if (same)
                     return done(null, user);
 
@@ -114,10 +114,9 @@ app.get('/api/reports', reports.get_safetycard_all);
 app.get('/api/reports/:id', reports.get_safetycard_one);
 app.post('/api/reports', reports.post_safetycard);
 
-
+/* Authentication */
 app.post('/api/auth/register', auth.register);
-
-app.post('/api/auth/login', 
+app.post('/api/auth/login',
     passport.authenticate('local', { failureRedirect: '/login.html' }),
     function(req, res) {
         res.redirect('/');
