@@ -78,12 +78,14 @@
     <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-face-shield"></i>Welding</a></div>
   </div>
 
+  <div class="center-align"><a class="waves-effect waves-light btn modal-trigger" href="#modalSubmit">Submit<i class="material-icons right">send</i></a></div>
+
   <!-- Modal -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
       <div class="container">
         <div class="col s12 m6">
-          <h5>This hazard exists at this site</h5>
+          <h5>This hazard exists</h5>
         </div>
         <div class="col s12 m6">
           <div class="switch">
@@ -103,7 +105,7 @@
         </form>
         <div class="input-field col s6">
           <h5>Identify the hazard and steps to prevent the hazard</h5>
-          <input id="hazard" type="text" class="validate">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
         </div>
       </div>
       <div class="modal-footer">
@@ -112,6 +114,17 @@
     </div>
   </div>
 </div>
+
+<div id="modalSubmit" class="modal">
+    <div class="modal-content">
+      <h4>Are you sure you want to submit?</h4>
+      <p>Confirm this shit bruh</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Disagree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
   
 <script>
   $(document).ready(function(){
