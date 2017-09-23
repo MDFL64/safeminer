@@ -6,7 +6,7 @@ const ObjectID   = mongodb.ObjectID;
 
 /* Exports */
 const users = require('./routes/users');
-const jobs = require('./routes/jobs');
+const risks = require('./routes/risks');
 
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
