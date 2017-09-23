@@ -29,8 +29,8 @@ Renders page
 Necessary fields:
 
 ```
-Email: String,
-Password: String
+Email    : String,
+Password : String
 ```
 
 - `GET api/register`
@@ -39,11 +39,40 @@ Renders page
 
 - `POST api/register`
 
+Necessary fields:
+
+```
+Email    : String,
+Password : String,
+Position : String,
+Name     : String
+```
+
 ### SafetyCard
 
 - `GET api/reports`
+
+Returns all reports
+
 - `POST api/reports`
-- `PUT api/reports/:id`
+
+Necessary fields:
+
+```
+"EmployeeID": MongoDB_ID,
+"JobName": String,
+"JobDescription": String,
+"Dangers": [
+    {
+        "Type": Int,
+        "Scale": Int,
+        "Description": String
+    }
+],
+"Geolocation": GeoJSON,
+```
+
+- `PUT api/reports/:id` **WIP**
 - **LATER** `DELETE api/reports/:id`
 
 ## Database structure
@@ -51,7 +80,6 @@ Renders page
 Tables:
 - reports
 - users
-
 
 **Instructions.**
 

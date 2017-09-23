@@ -9,9 +9,7 @@ module.exports.register = (req, res) => {
 	const email = req.body.Email;
 	const position = req.body.Position;
 	const name = req.body.Name;
-	const password1 = req.body.Password1;
-	const password2 = req.body.Password2;
-
+	const password = req.body.Password;
 
 	if (!EMAIL_REGEXP.test(email)) {
 		res.status(400).send({
@@ -31,12 +29,6 @@ module.exports.register = (req, res) => {
 			message: "Missing Position"
 		});
 	}
-	else if (password1 != password2) {
-		res.status(400).send({
-			success: false,
-			message: "Passwords do not match"
-		})
-	}
 	else {
 		db.collection("users")
 			.findOne({"Email": email})
@@ -48,7 +40,7 @@ module.exports.register = (req, res) => {
 					});
 				}
 				else {
-					bcrypt.hash(password1, 10)
+					bcrypt.hash(password, 10)
 						.then(hash => {
 							let user = {
 								Email: email,
