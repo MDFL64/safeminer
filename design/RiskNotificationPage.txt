@@ -1,0 +1,10 @@
+RISK NOTIFICATION PAGE:
+
+DESCRIPTION:
+
+This page will provide IOS style notification to the user of hazards in their Area.
+
+- Will pop up pictographic representation of hazards and text identified hazard
+- Clicking on hazard will pop up the steps to remedy text box created when the hazard was created
+
+PIE IN THE SKY: DIRECTIONAL COMPASS LIKE INDICATION OF RISK
