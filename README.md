@@ -2,7 +2,21 @@
 
 ## Structure WIP
 
-## Endpoints WIP
+## Endpoints
+
+### Authentication
+
+`GET api/login`
+`POST api/login`
+`GET api/register`
+`POST api/register`
+
+### SafetyCard
+
+`GET api/reports`
+`POST api/reports`
+`PUT api/reports/:id`
+**LATER** `DELETE api/reports/:id`
 
 ## Database structure
 
@@ -17,16 +31,18 @@ SafetyCard (table) {
   Dangers        : [
       {
           Type        : "type of hazard; Int",
+          Scale       : "scale of hazard; Int",
           Description : "description of steps to prevent this hazard; String",          
       }
   ],
   Geolocation    : "location of the area; TBD"
 }
 
-Employee (table) {
+Users (table) {
   _id      : "id of an employee; relates to EmployeeID",
-  Name     : "name of an employee",
-  Position : "job position of an employee",
+  Name     : "name of an employee; String",
+  Position : "job position of an employee; String",
+  isAdmin  : "if the user is admin or not; Bool",
   Age      : "age of an employee",
   Points   : "points employee got so far"
 }
