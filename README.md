@@ -4,6 +4,16 @@ Should you have any questions - ask! :)
 
 # Node JS Rest API
 
+## Workflow
+
+1. Always keep your master/branches updated.
+2. Checkout branch.
+3. Do awesome feature.
+4. Pull again (to update).
+5. Commit.
+6. Push (to the feat-### branch, not master).
+7. Make pull request.
+
 ## Structure WIP
 
 ## Endpoints
@@ -24,10 +34,15 @@ Should you have any questions - ask! :)
 
 ## Database structure
 
-Instructions.
+Tables:
+- reports
+- users
+
+
+**Instructions.**
 
 ```
-SafetyCard (table) {
+Reports (table) {
   _id            : "id of safety card; MongoDB_ID",
   EmployeeID     : "id of an employee; MongoDB_ID",
   DateCreated    : "date when safety card was created; Date ISO8601",
