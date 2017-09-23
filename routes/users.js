@@ -27,7 +27,7 @@ module.exports.post_users = (req, res) => {
   db.collection("users")
     .insertOne({ Name: name, Surname: surname })
     .then(result => {
-      res.status(200).send({
+      res.status(201).send({
         success: true,
         result
       });
