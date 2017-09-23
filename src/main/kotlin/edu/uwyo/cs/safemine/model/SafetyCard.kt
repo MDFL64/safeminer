@@ -1,7 +1,11 @@
 package edu.uwyo.cs.safemine.model
 
-/**
- * Created by hunter on 9/22/17.
- */
-class SafetyCard {
-}
+import java.time.LocalDateTime
+
+data class SafetyCard(
+        val employeeId: CharSequence,
+        val date: LocalDateTime,
+        val jobDescription: CharSequence,
+        val jobNumber: CharSequence,
+        val risks: Map<Risk, CharSequence>
+)
