@@ -61,7 +61,7 @@ module.exports.register = (req, res) => {
 							return db.collection("users").insertOne(user);
 						})
 						.then(user => {
-							res.status(200).send(user);
+							res.status(200).send(user.ops[0]);
 						})
 						.catch(function(err) {
 							res.status(500).send("Something went wrong");
