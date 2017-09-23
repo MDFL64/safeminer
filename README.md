@@ -51,7 +51,7 @@ Reports (table) {
   JobDescription : "description of the job performed; String",
   Dangers        : [
       {
-          Type        : "type of hazard; Int",
+          Type        : "type of hazard; Int; check the "categories of hazard" below",
           Scale       : "scale of hazard; Int",
           Description : "description of steps to prevent this hazard; String",          
       }
@@ -72,3 +72,65 @@ Users (table) {
 }
 
 ```
+
+## Categories of dangers
+
+- **Acids**
+
+*Type* 1
+
+- **Eye injury**
+
+*Type* 2
+
+- **Head injury**
+
+*Type* 3
+
+- **Slip and trips**
+
+*Type* 4
+
+- **Sharp edges**
+
+*Type* 5
+
+- **Rock slide**
+
+*Type* 6
+
+- **Heavy equipment**
+
+*Type* 7
+
+- **Suspended loads**
+
+*Type* 8
+
+- **Loud noises**
+
+*Type* 9
+
+- **Fall danger**
+
+*Type* 10
+
+- **L.O.T.O.**
+
+*Type* 11
+
+- **Welding**
+
+*Type* 12
+
+- **Electrocution**
+
+*Type* 13
+
+- **Toxic fumes**
+
+*Type* 14
+
+- **Other**
+
+*Type* 0
