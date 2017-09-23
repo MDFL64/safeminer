@@ -20,7 +20,7 @@
     
 <body>
   <div class="container">
-    <h1>SafeMine V 0.1</h1>
+    <h1 class="center-align">SafeMine V 0.1</h1>
   <form action="file:///action_page.php">
     <div class="row">
       <div class="input-field col s6">
@@ -40,46 +40,75 @@
     </div>
   </form>
 
-  <div class="row">
+  <div class="row"> <!-- This is decent... -->
       
-    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-acid-falling-on-hand"></i>Acids</a></div>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-acid-falling-on-hand"></i>Acids</a></div>
 
-    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-protection-gloves"></i>Sharp Edges</a></div> 
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-protection-gloves"></i>Sharp Edges</a></div> 
 
-    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-silhouette-with-safety-headphone"></i>Loud Noises</a></div>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-silhouette-with-safety-headphone"></i>Loud Noises</a></div>
 
-    <div class="col s12 m3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-electrocution-risk-sign"></i>Electrocution</a></div>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-electrocution-risk-sign"></i>Electrocution</a></div>
+      
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-safety-glasses"></i>Eye Injury</a></div>
+  <!--</div>
 
-  </div>
+  <div class="row"> <!-- This is decent... -->
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-rock-landslide-safety-sign"></i>Rockslide</a></div> 
 
-  <div class="row">
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="left-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-worker-with-harness"></i>Fall Danger</a></div>
 
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-fire-extinguisher"></i>Fire</a></div>
 
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-worker-silhouette"></i>Head injury</a></div>
 
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>  
-  </div>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-loaded-truck-side-view"></i>Heavy Eqpt</a></div> 
+  <!--</div>
 
-  <div class="row">
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="left-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+  <div class="row"> <!-- This is decent... -->
 
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-locked-padlock-with-chain"></i>L.O.T.O.</a></div>
 
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-gas-mask"></i>Toxic Fumes</a></div>
+      
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-sprained-ankle"></i>Slip and Trips</a></div>
 
-    <a class="fullwidth modal-trigger" href="#modal1"><div class="col s12 m3"><p class="center-align"><i class="flaticon-acid-falling-on-hand"></i>Acids</p></div></a>  
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-hook-hanging-material"></i>Suspended Loads</a></div> 
+
+    <div class="col s12 m4 l3"><a class="fullwidth modal-trigger btn-large" href="#modal1"><i class="flaticon-face-shield"></i>Welding</a></div>
   </div>
 
   <!-- Modal -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
-      <h4>Identify the hazard and steps to prevent the hazard.</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+      <div class="container">
+        <div class="col s12 m6">
+          <h5>This hazard exists at this site</h5>
+        </div>
+        <div class="col s12 m6">
+          <div class="switch">
+            <label>
+              No
+              <input type="checkbox">
+              <span class="lever"></span>
+              Yes
+            </label>
+          </div>
+        </div>
+
+        <form action="#">
+          <h5 class="range-field">On a scale of 1 to 10, how dangerous is this hazard?
+           <input type="range" id="test5" min="0" max="10" />
+          </h5>
+        </form>
+        <div class="input-field col s6">
+          <h5>Identify the hazard and steps to prevent the hazard</h5>
+          <input id="hazard" type="text" class="validate">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+      </div>
     </div>
   </div>
 </div>
