@@ -25,7 +25,7 @@ const app = express();
 
 /* Allow CORS */
 app.use(require('./config/cors'));
-
+app.engine('html', require('ejs').renderFile);
 
 /*    Middlewares   */
 app.use(bodyParser.json());
@@ -137,14 +137,9 @@ app.get('/api/reports/:id', checkAuthentication, reports.get_safetycard_one);
 app.post('/api/reports', checkAuthentication, reports.post_safetycard);
 
 /* Authentication */
-app.get('/api/auth/register', (request, response) => {
-  response.sendFile(__dirname + "/public/registration.html");
-});
-app.post('/api/auth/register', auth.register);
-app.get('/api/auth/login', (request, response) => {
-  response.sendFile(__dirname + "/public/login.html");
-})
-
+app.get('/api/auth/register', auth.get_register);
+app.post('/api/auth/register', auth.post_register);
+app.get('/api/auth/login', auth.get_login);
 app.post('/api/auth/login',
     passport.authenticate('local', { failureRedirect: '/login.html' }),
     function(req, res) {
