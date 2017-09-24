@@ -52,7 +52,7 @@
       </div>
     </nav>
     <% if (locals.user) { %>
-      <div class="yellow darken-2" style="padding: 10px; border-radius: 2px;"><%= "Welcome, "+user.Name+". You have "+user.Points+" Safety Points." %></div>
+      <div class="yellow darken-2" style="padding: 10px; border-radius: 2px; height: 57px;"><%= "Welcome, "+user.Name+". You have "+user.Points+" Safety Points." %><a href="/api/auth/logout" style="float: right;" class="btn blue-grey darken-2">Logout</a></div>
     <% } else { %>
       <div class="yellow darken-2" style="padding: 10px; border-radius: 2px;"><a href="/api/auth/login" class="btn blue-grey darken-2">Login</a></div>
     <% } %>
