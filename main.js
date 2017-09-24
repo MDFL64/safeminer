@@ -154,7 +154,10 @@ app.get("/about",function(req,res) {
 /* Reports */
 app.get('/api/reports', checkAuthentication, reports.get_safetycard_all);
 app.get('/api/reports/:id', checkAuthentication, reports.get_safetycard_one);
-app.post('/api/reports', checkAuthentication, reports.post_safetycard);
+
+/* Submit forms*/
+app.get('/api/submit', checkAuthentication, reports.get_submit_form);
+app.post('/api/submit', checkAuthentication, reports.post_safetycard);
 
 /* Authentication */
 app.get('/api/auth/register', auth.get_register);
@@ -173,6 +176,6 @@ app.get('/api/user/details', checkAuthentication, users.get_user_details);
 
 /* Safety radar */
 app.get('/api/radar', checkAuthentication, radar.get_active_hazards);
-app.get('/api/radar/local', radar.get_local_hazard);
+app.get('/api/radar/local', checkAuthentication, radar.get_local_hazard);
 app.post('/api/radar', checkAuthentication, radar.post_ongoing_hazard);
 app.put('/api/radar/:id', checkAuthentication, radar.deactive_ongoing_hazard);

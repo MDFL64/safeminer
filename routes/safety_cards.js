@@ -1,6 +1,11 @@
 "use strict";
 const ObjectID = require('mongodb').ObjectID;
 
+
+module.exports.get_submit_form = (request, response) => {
+  response.render('submit.html');
+}
+
 module.exports.get_safetycard_all = (request, response) => {
   const db = request.db;
 
@@ -16,8 +21,7 @@ module.exports.get_safetycard_all = (request, response) => {
     )
     .toArray()
     .then(reports => {
-      console.log(reports);
-      response.status(200).send(reports);
+      response.status(200).render('reports.html', { reports });
     })
     .catch(error => {
       response.status(500).send({
@@ -82,7 +86,7 @@ const is_valid_safetycard = (array) => {
 module.exports.post_safetycard = (request, response) => {
     const db = request.db
 
-    const employee_id = request.body.EmployeeID;
+    const employee_id = request.user._id;
     const date_today = new Date();
     const job_name = request.body.JobName;
     const job_description = request.body.JobDescription;
@@ -176,10 +180,7 @@ module.exports.post_safetycard = (request, response) => {
               }
             )
             .then(result => {
-              response.status(200).send({
-                success: true,
-                message: "Report submitted!"
-              })
+              response.status(301).redirect('/api/reports');
             })
             .catch(error => {
               response.status(500).send({
