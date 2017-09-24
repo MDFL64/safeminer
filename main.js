@@ -107,6 +107,13 @@ app.all('*', (req, res, next) => {
     next();
 });
 
+// Add user locals
+app.use(function(req,res,next) {
+  console.log(req.user);
+  res.locals.user = req.user;
+  next();
+});
+
 /* Server wakes up after "dbready" event is emitted from his db-friend Mongo */
 dbEmitter.once("dbready", () => {
     const server = app.listen(process.env.PORT || 8080, () => {
@@ -135,6 +142,7 @@ function checkAuthentication(req, res, next) {
 /* Misc Views */
 app.get("/about",function(req,res) {
   var welcome;
+  console.log(res.locals);
 
   if (req.user)
     welcome = "Welcome, "+req.user.Name+". You have "+req.user.Points+" Safety Points.";
@@ -153,7 +161,6 @@ app.get('/api/auth/login', auth.get_login);
 app.post('/api/auth/login',
     passport.authenticate('local', { successRedirect: '/',failWithError: true }),
     function(err, req, res, next) {
-      console.log("failure!",err);
       return res.render("login.html",{msg: "Incorrect email/password."})
     }
 );
