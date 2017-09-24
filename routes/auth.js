@@ -75,3 +75,9 @@ module.exports.post_register = (req, res) => {
 			});
 	}
 }
+
+module.exports.logout = (req, res) => {
+	req.logout();
+  req.session.destroy();
+  res.redirect('/api/auth/login');
+}

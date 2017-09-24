@@ -163,6 +163,7 @@ app.post('/api/submit', checkAuthentication, reports.post_safetycard);
 app.get('/api/auth/register', auth.get_register);
 app.post('/api/auth/register', auth.post_register);
 app.get('/api/auth/login', auth.get_login);
+app.get('/api/auth/logout', auth.logout);
 app.post('/api/auth/login',
     passport.authenticate('local', { successRedirect: '/',failWithError: true }),
     function(err, req, res, next) {
