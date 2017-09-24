@@ -620,21 +620,11 @@
       console.log(JSON.stringify(request));
       $.ajax({
           type: "POST",
-          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-          url: "/api/oath/login",
-          data: jQuery.param({ Email: "admin@admin.com", Password: "admin1" }),
-          success: function (response) {
-              $.ajax({
-                  type: "POST",
-                  dataType: "json",
-                  url: "/api/reports",
-                  data: JSON.stringify(request),
-                  success: function(data) { alert("I think it worked. I think." + data.toString()); }
-              });
-          },
-          error: function () {
-              alert("An error occurred.");
-          }
+          dataType: "json",
+          url: "/api/reports",
+          data: JSON.stringify(request),
+          success: function(data) { console.log("success", data) },
+          error: function(err) { window.location = "login.html"; }
       });
   }
 </script>
