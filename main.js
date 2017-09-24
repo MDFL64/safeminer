@@ -6,7 +6,7 @@ const ObjectID   = mongodb.ObjectID;
 
 /* Exports */
 const users = require('./routes/users');
-const jobs = require('./routes/jobs');
+const risks = require('./routes/risks');
 
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
@@ -64,7 +64,7 @@ app.post('/api/users', users.post_users);
 
 app.get('/api/risks', risks.get_risks);
 app.get('/api/risks/startingWith/:s', risks.get_risks_starting_with);
-app.post('/api/risks', risks.post_risks);
+app.post('/api/risks', risks.post_risk);
 
 app.post('/login', 
     passport.authenticate('local', { failureRedirect: '/login' }),
