@@ -52,8 +52,7 @@ passport.use(new Strategy({
         passReqToCallback: true,
         session: false
     },
-    function(req, email, pass, done) {
-      console.log(`checking your mamas pass`)
+    function(req, email, pass, done) {      
       db.collection("users")
         .findOne({ Email: email }, function(err,user) {
           if (err) { return done(err); }
