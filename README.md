@@ -1,4 +1,18 @@
+# Please follow README as our specs/endpoints/db is defined here.
+
+Should you have any questions - ask! :)
+
 # Node JS Rest API
+
+## Workflow
+
+1. Always keep your master/branches updated.
+2. Checkout branch.
+3. Do awesome feature.
+4. Pull again (to update).
+5. Commit.
+6. Push (to the feat-### branch, not master).
+7. Make pull request.
 
 ## Structure WIP
 
@@ -20,10 +34,15 @@
 
 ## Database structure
 
-Instructions.
+Tables:
+- reports
+- users
+
+
+**Instructions.**
 
 ```
-SafetyCard (table) {
+Reports (table) {
   _id            : "id of safety card; MongoDB_ID",
   EmployeeID     : "id of an employee; MongoDB_ID",
   DateCreated    : "date when safety card was created; Date ISO8601",
@@ -32,7 +51,7 @@ SafetyCard (table) {
   JobDescription : "description of the job performed; String",
   Dangers        : [
       {
-          Type        : "type of hazard; Int",
+          Type        : "type of hazard; Int; check the "categories of hazard" below",
           Scale       : "scale of hazard; Int",
           Description : "description of steps to prevent this hazard; String",          
       }
@@ -46,11 +65,71 @@ Users (table) {
   Email    : "email of an employee; email type w/ regex",
   Password : "password of an employee; use bcrypt to hash and compare"
   Name     : "name of an employee; String",
-  Position : "job position of an employee; String",
-  isAdmin  : "if the user is admin or not; Bool",
-  Age      : "age of an employee",
+  Position : "job position of an employee; String",  
   Points   : "points employee got so far",
   isDeleted: "bool"
 }
 
 ```
+
+## Categories of dangers
+
+- **Acids**
+
+*Type* 1
+
+- **Eye injury**
+
+*Type* 2
+
+- **Head injury**
+
+*Type* 3
+
+- **Slip and trips**
+
+*Type* 4
+
+- **Sharp edges**
+
+*Type* 5
+
+- **Rock slide**
+
+*Type* 6
+
+- **Heavy equipment**
+
+*Type* 7
+
+- **Suspended loads**
+
+*Type* 8
+
+- **Loud noises**
+
+*Type* 9
+
+- **Fall danger**
+
+*Type* 10
+
+- **L.O.T.O.**
+
+*Type* 11
+
+- **Welding**
+
+*Type* 12
+
+- **Electrocution**
+
+*Type* 13
+
+- **Toxic fumes**
+
+*Type* 14
+
+- **Other**
+
+*Type* 0

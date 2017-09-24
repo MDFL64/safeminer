@@ -9,8 +9,8 @@ const session       = require('express-session');
 const bcrypt        = require("bcrypt");
 
 /* Exports */
-const users = require('./routes/users');
-const risks = require('./routes/risks');
+const users   = require('./routes/users');
+const reports = require('./routes/safety_cards');
 
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
@@ -96,12 +96,14 @@ dbEmitter.once("dbready", () => {
 
 /*   Routes!   */
 
+/* Users */
 app.get('/api/users', users.get_users);
 app.post('/api/users', users.post_users);
 
-app.get('/api/risks', risks.get_risks);
-app.get('/api/risks/startingWith/:s', risks.get_risks_starting_with);
-app.post('/api/risks', risks.post_risk);
+/* Reports */
+app.get('/api/reports', reports.get_safetycard_all);
+app.get('/api/reports/:id', reports.get_safetycard_one);
+app.post('/api/reports', reports.post_safetycard)
 
 app.post('/api/login', 
     passport.authenticate('local', { failureRedirect: '/login' }),
