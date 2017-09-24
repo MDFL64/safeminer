@@ -47,8 +47,8 @@ let db;
 
 /* Passport */
 passport.use(new Strategy({
-        usernameField: 'Email',
-        passwordField: 'Password',
+        usernameField: 'email',
+        passwordField: 'password',
         passReqToCallback: true,
         session: false
     },
