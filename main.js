@@ -12,6 +12,8 @@ const bcrypt        = require("bcrypt");
 const users   = require('./routes/users');
 const reports = require('./routes/safety_cards');
 
+const auth    = require('./routes/auth');
+
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
 class MyEmitter extends EventEmitter {}
@@ -49,8 +51,15 @@ passport.use(new LocalStrategy({
         db.collection("users").findOne({"Email": email}, function(err,user) {
             if (err) { return done(err); }
             if (!user) { return done(null,false); }
-            if (!bcrypt.compare(pass,user.Password)) { return done(null,false); }
-            return done(null, user);
+            bcrypt.compare(pass,user.Password,function(err,same) {
+                if (err)
+                    return done(err);
+                
+                if (same)
+                    return done(null, user);
+
+                return done(null,false);
+            });
         });
     }
 ));
@@ -103,10 +112,13 @@ app.post('/api/users', users.post_users);
 /* Reports */
 app.get('/api/reports', reports.get_safetycard_all);
 app.get('/api/reports/:id', reports.get_safetycard_one);
-app.post('/api/reports', reports.post_safetycard)
+app.post('/api/reports', reports.post_safetycard);
 
-app.post('/api/login', 
-    passport.authenticate('local', { failureRedirect: '/login' }),
+
+app.post('/api/auth/register', auth.register);
+
+app.post('/api/auth/login', 
+    passport.authenticate('local', { failureRedirect: '/login.html' }),
     function(req, res) {
         res.redirect('/');
     }
