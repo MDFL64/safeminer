@@ -65,3 +65,10 @@ app.post('/api/users', users.post_users);
 app.get('/api/risks', risks.get_risks);
 app.get('/api/risks/startingWith/:s', risks.get_risks_starting_with);
 app.post('/api/risks', risks.post_risks);
+
+app.post('/login', 
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res) {
+        res.redirect('/');
+    }
+);
