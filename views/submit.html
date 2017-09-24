@@ -517,7 +517,6 @@
   function submitForm() {
       function randomGeo() { return (Math.random() * -180).toFixed(3) * 1; }
       var request = {
-          EmployeeID: $("#empID")[0].value,
           JobName: $("#jobName")[0].value,
           JobDescription: $("#jobDesc")[0].value,
           Dangers: [],
@@ -540,8 +539,8 @@
           headers: { "Content-Type": "application/json" },
           url: "/api/submit",
           data: JSON.stringify(request),
-          success: function(data) { console.log("success", data) },
-          error: function(err) { console.log("error", err); window.location = "login.html"; }
+          success: function(data) { console.log("success", data); window.location = "/api/reports" },
+          error: function(err) { console.log("error", err); window.location = "/api/auth/login"; }
       });
   }
 </script>
