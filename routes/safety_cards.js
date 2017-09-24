@@ -63,7 +63,7 @@ module.exports.get_safetycard_one = (request, response) => {
 }
 
 
-const is_valid_safetycard = (dangers) => {
+const is_valid_safetycard = (array) => {
   if (!array) {
     return false;
   }
@@ -88,8 +88,11 @@ module.exports.post_safetycard = (request, response) => {
     const job_description = request.body.JobDescription;
     const dangers = request.body.Dangers;
     const geolocation = request.body.Geolocation;
+    const latitude    = Number(geolocation.Latitude);
+    const longitude   = Number(geolocation.Longitude);
 
     if (!ObjectID.isValid(employee_id)) {
+      console.log(employee_id);
       response.status(400).send({
         success: false,
         message: "Invalid EmployeeID"
@@ -144,8 +147,8 @@ module.exports.post_safetycard = (request, response) => {
                 Geolocation: {
                   type: "Point",
                   coordinates: [
-                    Geolocation.Longitude,
-                    Geolocation.Latitude
+                    longitude,
+                    latitude
                   ]
                 },
                 isDeleted: false
@@ -155,7 +158,7 @@ module.exports.post_safetycard = (request, response) => {
             db.collection("reports")
                 .insertOne(safety_card)
                 .then(result => {
-                    response.status(200).send(result);
+                    response.status(200).send(result.ops[0]);
                 })
                 .catch(err => {
                     response.status(500).send({ error: err });

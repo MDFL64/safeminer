@@ -30,7 +30,7 @@ app.use(require('./config/cors'));
 app.engine('html', require('ejs').renderFile);
 
 /*    Middlewares   */
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use('/', express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({
@@ -135,7 +135,7 @@ function checkAuthentication(req, res, next) {
 /* Reports */
 app.get('/api/reports', checkAuthentication, reports.get_safetycard_all);
 app.get('/api/reports/:id', checkAuthentication, reports.get_safetycard_one);
-app.post('/api/reports', checkAuthentication, reports.post_safetycard);
+app.post('/api/reports', reports.post_safetycard);
 
 /* Authentication */
 app.get('/api/auth/register', auth.get_register);

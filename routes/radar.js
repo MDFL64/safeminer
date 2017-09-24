@@ -1,9 +1,10 @@
 const ObjectID = require('mongodb').ObjectID;
 
+const HAZARDS_COLLECTION = "hazards";
+
 module.exports.get_radar_page = (req, res) => {
   res.render("../public/radar.html");
 }
-
 
 module.exports.post_ongoing_hazard = (req, res) => {
   const db = req.db;
@@ -33,7 +34,7 @@ module.exports.post_ongoing_hazard = (req, res) => {
     });
   }
   else {
-    db.collection("hazards")
+    db.collection(HAZARDS_COLLECTION)
       .insertOne(
         {
           Type         : type,
@@ -77,7 +78,7 @@ module.exports.deactive_ongoing_hazard  = (req, res) => {
     });
   }
   else {
-    db.collection("hazards")
+    db.collection(HAZARDS_COLLECTION)
       .updateOne(
         {
           _id : ObjectID(hazard_id),
@@ -116,7 +117,7 @@ module.exports.deactive_ongoing_hazard  = (req, res) => {
 module.exports.get_active_hazards = (req, res) => {
   const db = req.db;
 
-  db.collection("hazards")
+  db.collection(HAZARDS_COLLECTION)
     .aggregate([
       { $match: { isActive: true } },
       { $sort : { DateCreated: -1 } }
@@ -133,3 +134,28 @@ module.exports.get_active_hazards = (req, res) => {
     });
 
 }
+
+
+// module.exports.get_local_hazard = (req, res) => {
+//   const db = req.db;
+//
+//
+//
+//   db.collection(HAZARDS_COLLECTION)
+//     .find(
+//       {
+//         isActive: true,
+//         <location field>: {
+//           $near: {
+//             $geometry: {
+//               type: "Point" ,
+//               coordinates: [ <longitude> , <latitude> ]
+//             },
+//             $maxDistance: <distance in meters>,
+//             $minDistance: <distance in meters>
+//           }
+//         }
+//       }
+//     )
+//
+// }
