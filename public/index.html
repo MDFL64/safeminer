@@ -612,8 +612,20 @@
       }
       $.ajax({
           type: "POST",
+          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+          url: "http://safemine-dev.herokuapp.com/api/login",
+          data: jQuery.param({ Email: "admin@admin.com", Password: "admin1" }),
+          success: function (response) {
+              alert(response.status);
+          },
+          error: function () {
+              alert("An error occurred.");
+          }
+      });
+      $.ajax({
+          type: "POST",
           dataType: "json",
-          url: "http://localhost:8080/api/reports",
+          url: "http://safemine-dev.herokuapp.com/api/reports",
           success: function(data) { alert("I think it worked. I think." + data.toString()); }
       });
   }
