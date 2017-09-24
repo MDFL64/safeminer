@@ -20,6 +20,10 @@ const dbEmitter = new MyEmitter();
 /* For environment variable */
 require('dotenv').config();
 
+/* Allow CORS */
+app.use(require('./config/cors'));
+
+/* FIRE THE APP */
 const app = express();
 
 /*    Middlewares   */
