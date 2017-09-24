@@ -138,10 +138,13 @@ function checkAuthentication(req, res, next) {
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 /*   Routes!   */
-app.get('/', checkAuthentication, (req, res) => {
-  res.render('index.html');
-})
+app.get('/', (req, res) => {
+  res.redirect("/about");
+});
 
+app.get('/submit', checkAuthentication, (req, res) => {
+  res.render('submit.html');
+});
 
 /* Misc Views */
 app.get("/about",function(req,res) {
