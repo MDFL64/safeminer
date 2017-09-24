@@ -538,7 +538,7 @@
           type: "POST",
           dataType: "json",
           headers: { "Content-Type": "application/json" },
-          url: "/api/reports",
+          url: "/api/submit",
           data: JSON.stringify(request),
           success: function(data) { console.log("success", data) },
           error: function(err) { console.log("error", err); window.location = "login.html"; }
