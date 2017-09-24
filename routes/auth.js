@@ -14,19 +14,19 @@ module.exports.register = (req, res) => {
 	if (!EMAIL_REGEXP.test(email)) {
 		res.status(400).send({
 			success: false,
-			message: "Invalid email"
+			message: "Invalid email!"
 		});
 	}
 	else if (!name || !(typeof name === "string")) {
 		res.status(400).send({
 			success: false,
-			message: "Wrong email field"
+			message: "Missing name!"
 		});
 	}
 	else if (!position || !(typeof position === "string")) {
 		res.status(400).send({
 			success: false,
-			message: "Missing Position"
+			message: "Missing job title!"
 		});
 	}
 	else {
@@ -53,7 +53,10 @@ module.exports.register = (req, res) => {
 							return db.collection("users").insertOne(user);
 						})
 						.then(user => {
-							res.status(200).send(user.ops[0]);
+							res.status(200).send({
+								success: true,
+								message: "Successfully registered!"
+							});
 						})
 						.catch(function(err) {
 							res.status(500).send("Something went wrong");

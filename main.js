@@ -29,6 +29,7 @@ app.use(require('./config/cors'));
 
 /*    Middlewares   */
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use('/', express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({

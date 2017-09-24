@@ -98,12 +98,14 @@
         <div class="row">
           <div class="input-field col s12">
             <input class='validate white-text' type='text' name='job' id='job' />
-            <label for='job'>Position</label>
+            <label for='job'>Job Title</label>
           </div>
         </div>
       </form>
+      <div id="notify" class="row red white-text" style="display: none; padding: 8px; text-align: center;">
+      </div>
       <div class="row">
-        <button onclick="try_register();" name='btn_login' class='col s4 offset-s4 btn btn-large waves-effect yellow darken-2 center'><span class="grey-text text-darken-1">Register</span></button>
+        <button onclick="try_register();" id='btn_login' style="margin-bottom: 30px;" name='btn_login' class='col s4 offset-s4 btn btn-large waves-effect yellow darken-2 center'><span class="grey-text text-darken-1">Register</span></button>
       </div>
     </div>
   </div>
@@ -114,7 +116,20 @@
       $('.parallax').parallax();
     });
     function try_register() {
-      console.log(document.forms);
+      var data = new FormData(document.querySelector("form"));
+      var obj = {}
+      for (var kv of data.entries()) {
+        obj[kv[0]]=kv[1];
+      }
+      $.post("/api/auth/register",obj,function(res,r2) {
+        $("#notify").show(100).text(res.message);
+        $("#btn_login").remove();
+        setTimeout(function() {
+          window.location="/login.html";
+        },3000);
+      }).fail(function(xhr) {
+        $("#notify").show(100).text(xhr.responseJSON.message);
+      });
     }
   </script>
 </body>
