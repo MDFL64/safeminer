@@ -171,7 +171,7 @@ app.get('/api/user/details', checkAuthentication, users.get_user_details);
 
 
 /* Safety radar */
-app.get('/api/radar', radar.get_radar_page);
-app.get('/api/radar/active', radar.get_active_hazards);
-app.post('/api/radar', radar.post_ongoing_hazard);
-app.put('/api/radar/:id', radar.deactive_ongoing_hazard);
+app.get('/api/radar', checkAuthentication, radar.get_radar_page);
+app.get('/api/radar/active', checkAuthentication, radar.get_active_hazards);
+app.post('/api/radar', checkAuthentication, radar.post_ongoing_hazard);
+app.put('/api/radar/:id', checkAuthentication, radar.deactive_ongoing_hazard);
