@@ -48,6 +48,55 @@ Position : String,
 Name     : String
 ```
 
+### Hazards
+
+- `GET api/radar/active`
+
+Returns all active hazards happening now.
+
+Example:
+
+```
+{
+    "_id": "59c7e014af42ed1c3ca064ba",
+    "Type": 1,
+    "Geolocation": {
+        "type": "Point",
+        "coordinates": [
+            40,
+            -40
+        ]
+    },
+    "DateCreated": "2017-09-24T16:40:52.948Z",
+    "DateModified": "2017-09-24T16:40:52.948Z",
+    "PostedBy": "59c6c020cfa8f44b0646f81e",
+    "isActive": true
+},  
+```
+
+- `POST api/radar/`
+
+Posts a hazard (== activates a hazard).
+
+Necessary fields:
+
+```
+Type: Int (type of hazard),
+EmployeeID : MongoDB hex id,
+Geolocation: {
+  Longitude: 12.42,
+  Latitude: 14.23
+}
+```
+
+- `PUT api/radar/:id`
+
+Deactivates a hazard.
+
+**PASS VIA PARAMETER, NOT BODY!**
+
+*id* - id of a hazard
+
 ### SafetyCard
 
 - `GET api/reports`

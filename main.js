@@ -12,6 +12,7 @@ const bcrypt        = require("bcrypt");
 const reports = require('./routes/safety_cards');
 const auth    = require('./routes/auth');
 const users   = require('./routes/users');
+const radar   = require('./routes/radar');
 
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
@@ -29,8 +30,7 @@ app.use(require('./config/cors'));
 app.engine('html', require('ejs').renderFile);
 
 /*    Middlewares   */
-app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({
@@ -150,3 +150,10 @@ app.post('/api/auth/login',
 
 /* User info */
 app.get('/api/user/details', checkAuthentication, users.get_user_details);
+
+
+/* Safety radar */
+app.get('/api/radar', radar.get_radar_page);
+app.get('/api/radar/active', radar.get_active_hazards);
+app.post('/api/radar', radar.post_ongoing_hazard);
+app.put('/api/radar/:id', radar.deactive_ongoing_hazard);
