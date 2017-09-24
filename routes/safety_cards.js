@@ -173,7 +173,7 @@ module.exports.post_safetycard = (request, response) => {
           db.collection("users")
             .updateOne(
               {
-                _id : ObjectID(employee.EmployeeID)
+                _id : ObjectID(employee_id)
               },
               {
                 $inc: { Points: 1 }

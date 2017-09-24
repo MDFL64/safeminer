@@ -1,3 +1,5 @@
+"use strict";
+
 const ObjectID = require('mongodb').ObjectID;
 
 const HAZARDS_COLLECTION = "hazards";
