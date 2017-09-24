@@ -24,17 +24,17 @@ module.exports.post_register = (req, res) => {
 	if (!EMAIL_REGEXP.test(email)) {
 		res
 		.status(400)
-		.render("register.html",{msg: "Invalid email!", user: template_user});
+		.render("register.html",{msg: "Invalid email!", form_user: template_user});
 	}
 	else if (!name || !(typeof name === "string")) {
 		res
 		.status(400)
-		.render("register.html",{msg: "Missing name!", user: template_user});
+		.render("register.html",{msg: "Missing name!", form_user: template_user});
 	}
 	else if (!position || !(typeof position === "string")) {
 		res
 		.status(400)
-		.render("register.html",{msg: "Missing job title!", user: template_user});
+		.render("register.html",{msg: "Missing job title!", form_user: template_user});
 	}
 	else {
 		db.collection("users")
@@ -43,7 +43,7 @@ module.exports.post_register = (req, res) => {
 				if (user) {
 					res
 					.status(400)
-					.render("register.html",{msg: "User already exists!", user: template_user});
+					.render("register.html",{msg: "User already exists!", form_user: template_user});
 				}
 				else {
 					bcrypt.hash(password, 10)
@@ -59,19 +59,19 @@ module.exports.post_register = (req, res) => {
 							return db.collection("users").insertOne(user);
 						})
 						.then(user => {
-							res.render("register_good.html", {user: template_user});
+							res.render("register_good.html", {form_user: template_user});
 						})
 						.catch(function(err) {
 							res
 							.status(500)
-							.render("register.html",{msg: "Something went wrong!", user: template_user});
+							.render("register.html",{msg: "Something went wrong!", form_user: template_user});
 						});
 				}
 			})
 			.catch(error => {
 				res
 				.status(500)
-				.render("register.html",{msg: "Something went wrong!", user: template_user});
+				.render("register.html",{msg: "Something went wrong!", form_user: template_user});
 			});
 	}
 }

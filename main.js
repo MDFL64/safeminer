@@ -142,12 +142,7 @@ function checkAuthentication(req, res, next) {
 
 /* Misc Views */
 app.get("/about",function(req,res) {
-  var welcome;
-  console.log(res.locals);
-
-  if (req.user)
-    welcome = "Welcome, "+req.user.Name+". You have "+req.user.Points+" Safety Points.";
-  res.render("about.html",{msg: welcome});
+  res.render("about.html");
 });
 
 /* Reports */
