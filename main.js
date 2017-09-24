@@ -11,6 +11,7 @@ const bcrypt        = require("bcrypt");
 /* Exports */
 const reports = require('./routes/safety_cards');
 const auth    = require('./routes/auth');
+const users   = require('./routes/users');
 
 /* For letting database turn on first. Then, server will start */
 const EventEmitter = require('events');
@@ -29,7 +30,7 @@ app.engine('html', require('ejs').renderFile);
 
 /*    Middlewares   */
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+//app.use(bodyParser.urlencoded());
 app.use('/', express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({
@@ -47,12 +48,12 @@ let db;
 
 /* Passport */
 passport.use(new Strategy({
-        usernameField: 'email',
-        passwordField: 'password',
+        usernameField: 'Email',
+        passwordField: 'Password',
         passReqToCallback: true,
         session: false
     },
-    function(req, email, pass, done) {      
+    function(req, email, pass, done) {
       db.collection("users")
         .findOne({ Email: email }, function(err,user) {
           if (err) { return done(err); }
@@ -146,3 +147,6 @@ app.post('/api/auth/login',
         res.redirect('/');
     }
 );
+
+/* User info */
+app.get('/api/user/details', checkAuthentication, users.get_user_details);

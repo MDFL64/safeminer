@@ -17,10 +17,10 @@ module.exports.post_register = (req, res) => {
 
 	const EMAIL_REGEXP = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-	const email = req.body.email;
-	const position = req.body.job;
-	const name = req.body.empName;
-	const password = req.body.password;
+	const email 	 = req.body.Email;
+	const position = req.body.Position;
+	const name 		 = req.body.Name;
+	const password = req.body.Password;
 	console.log(email);
 	if (!EMAIL_REGEXP.test(email)) {
 		res.status(400).send({
