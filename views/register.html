@@ -11,7 +11,7 @@
 
   <div class="row">
     <div class="input-field col s12 m6">
-      <input class='validate white-text' type='text' name='Name' id='Name' required="" value="<%= locals.user && locals.user.Name %>" />
+      <input class='validate white-text' type='text' name='Name' id='Name' required="" value="<%= locals.user && locals.form_user.Name %>" />
       <label for='Name'>Name</label>
     </div>
 
@@ -22,7 +22,7 @@
   </div></div>-->
 
     <div class="input-field col s12 m6">
-      <input class='validate white-text' type='email' name='Email' id='Email' required="" value="<%= locals.user && locals.user.Email %>" />
+      <input class='validate white-text' type='email' name='Email' id='Email' required="" value="<%= locals.user && locals.form_user.Email %>" />
       <label for='Email'>Email</label>
     </div>
   </div>
@@ -35,7 +35,7 @@
 
   
     <div class="input-field col s12 m6">
-      <input class='validate white-text' type='text' name='Position' id='Position' required="" value="<%= locals.user && locals.user.Position %>" />
+      <input class='validate white-text' type='text' name='Position' id='Position' required="" value="<%= locals.user && locals.form_user.Position %>" />
       <label for='Position'>Job Title</label>
     </div>
   </div>
