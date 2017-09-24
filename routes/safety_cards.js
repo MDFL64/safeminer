@@ -155,15 +155,38 @@ module.exports.post_safetycard = (request, response) => {
             };
 
             // insert record
-            db.collection("reports")
+            return db.collection("reports")
                 .insertOne(safety_card)
                 .then(result => {
-                    response.status(200).send(result.ops[0]);
+                    return result.ops[0];
                 })
                 .catch(err => {
                     response.status(500).send({ error: err });
                 });
           }
+        })
+        .then(employee => {
+          db.collection("users")
+            .updateOne(
+              {
+                _id : ObjectID(employee.EmployeeID)
+              },
+              {
+                $inc: { Points: 1 }
+              }
+            )
+            .then(result => {
+              response.status(200).send({
+                success: true,
+                message: "Report submitted!"
+              })
+            })
+            .catch(error => {
+              response.status(500).send({
+                success: false,
+                error: error.message
+              });
+            });
         })
         .catch(error => {
           response.status(500).send({
@@ -172,8 +195,4 @@ module.exports.post_safetycard = (request, response) => {
           });
         });
     }
-}
-
-module.exports.render_reports = (req, res) => {
-  
 }
