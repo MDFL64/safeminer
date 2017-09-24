@@ -117,17 +117,13 @@ dbEmitter.once("dbready", () => {
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 /* Route helpers */
-
 function checkAuthentication(req, res, next) {
   if(req.isAuthenticated()){
       //if user is looged in, req.isAuthenticated() will return true
     next();
   }
   else {
-    res.status(401).send({
-      success: false,
-      message: "Access denied"
-    });
+    res.redirect('/api/auth/login');
   }
 }
 
@@ -141,7 +137,14 @@ app.get('/api/reports/:id', checkAuthentication, reports.get_safetycard_one);
 app.post('/api/reports', checkAuthentication, reports.post_safetycard);
 
 /* Authentication */
+app.get('/api/auth/register', (request, response) => {
+  response.sendFile(__dirname + "/public/registration.html");
+});
 app.post('/api/auth/register', auth.register);
+app.get('/api/auth/login', (request, response) => {
+  response.sendFile(__dirname + "/public/login.html");
+})
+
 app.post('/api/auth/login',
     passport.authenticate('local', { failureRedirect: '/login.html' }),
     function(req, res) {
