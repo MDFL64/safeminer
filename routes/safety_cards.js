@@ -90,31 +90,31 @@ module.exports.post_safetycard = (request, response) => {
     const geolocation = request.body.Geolocation;
 
     if (!ObjectID.isValid(employee_id)) {
-      res.status(400).send({
+      response.status(400).send({
         success: false,
         message: "Invalid EmployeeID"
       });
     }
     else if (!job_name || !(typeof job_name === "string")) {
-      res.status(400).send({
+      response.status(400).send({
         success: false,
         message: "Invalid job name"
       });
     }
     else if (!job_description || !(typeof job_description === "string")) {
-      res.status(400).send({
+      response.status(400).send({
         success: false,
         message: "Invalid job description"
       });
     }
     else if (!is_valid_safetycard(dangers)) {
-      res.status(400).send({
+      response.status(400).send({
         success: false,
         message: "Invalid safety card"
       });
     }
     else if (!geolocation.Longitude || !geolocation.Latitude) {
-      res.status(400).send({
+      response.status(400).send({
         success: false,
         message: "Invalid geolocation"
       });
@@ -129,7 +129,7 @@ module.exports.post_safetycard = (request, response) => {
         )
         .then(result => {
           if (!result) {
-            res.status(404).send({
+            response.status(404).send({
               error: "user not found"
             });
           }
@@ -155,7 +155,7 @@ module.exports.post_safetycard = (request, response) => {
             db.collection("reports")
                 .insertOne(safety_card)
                 .then(result => {
-                    response.status(201).send(result);
+                    response.status(200).send(result);
                 })
                 .catch(err => {
                     response.status(500).send({ error: err });
@@ -163,7 +163,7 @@ module.exports.post_safetycard = (request, response) => {
           }
         })
         .catch(error => {
-          res.status(500).send({
+          response.status(500).send({
             success: false,
             error: error.message
           });
