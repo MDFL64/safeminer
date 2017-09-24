@@ -582,7 +582,7 @@
 <div id="modalSubmit" class="modal">
     <div class="modal-content">
       <h4>Are you sure you want to submit?</h4>
-      <p>Your supervisor will be able to see your report as soon as you submit it.</p>
+      <p>Your supervisor will be able to see it as soon as you submit.</p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Disagree</a>
@@ -626,7 +626,7 @@
           url: "/api/reports",
           data: JSON.stringify(request),
           success: function(data) { console.log("success", data) },
-          error: function(err) { console.log("error", err); /*window.location = "login.html";*/ }
+          error: function(err) { console.log("error", err); window.location = "login.html"; }
       });
   }
 </script>
