@@ -173,3 +173,7 @@ module.exports.post_safetycard = (request, response) => {
         });
     }
 }
+
+module.exports.render_reports = (req, res) => {
+  
+}

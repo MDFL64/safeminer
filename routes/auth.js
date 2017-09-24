@@ -1,16 +1,13 @@
 "use strict";
 const bcrypt = require("bcrypt");
 
-
 module.exports.get_login = (req, res) => {
-	res.render("../public/login.html");
+	res.render("login.html");
 }
-
 
 module.exports.get_register = (req, res) => {
-  res.render("../public/registration.html");
+	res.render("register.html");
 }
-
 
 module.exports.post_register = (req, res) => {
 	const db = req.db;
@@ -21,34 +18,32 @@ module.exports.post_register = (req, res) => {
 	const position = req.body.Position;
 	const name 		 = req.body.Name;
 	const password = req.body.Password;
-	console.log(email);
+
+	let template_user = {Email: email, Name: name, Position: position};
+
 	if (!EMAIL_REGEXP.test(email)) {
-		res.status(400).send({
-			success: false,
-			message: "Invalid email!"
-		});
+		res
+		.status(400)
+		.render("register.html",{msg: "Invalid email!", user: template_user});
 	}
 	else if (!name || !(typeof name === "string")) {
-		res.status(400).send({
-			success: false,
-			message: "Missing name!"
-		});
+		res
+		.status(400)
+		.render("register.html",{msg: "Missing name!", user: template_user});
 	}
 	else if (!position || !(typeof position === "string")) {
-		res.status(400).send({
-			success: false,
-			message: "Missing job title!"
-		});
+		res
+		.status(400)
+		.render("register.html",{msg: "Missing job title!", user: template_user});
 	}
 	else {
 		db.collection("users")
 			.findOne({"Email": email})
 			.then(user => {
 				if (user) {
-					res.status(400).send({
-						success: false,
-						message: "User already exists!"
-					});
+					res
+					.status(400)
+					.render("register.html",{msg: "User already exists!", user: template_user});
 				}
 				else {
 					bcrypt.hash(password, 10)
@@ -64,18 +59,19 @@ module.exports.post_register = (req, res) => {
 							return db.collection("users").insertOne(user);
 						})
 						.then(user => {
-							res.status(200).send({
-								success: true,
-								message: "Successfully registered!"
-							});
+							res.render("register_good.html", {user: template_user});
 						})
 						.catch(function(err) {
-							res.status(500).send("Something went wrong");
+							res
+							.status(500)
+							.render("register.html",{msg: "Something went wrong!", user: template_user});
 						});
 				}
 			})
 			.catch(error => {
-				res.status(500).send("Something went wrong");
+				res
+				.status(500)
+				.render("register.html",{msg: "Something went wrong!", user: template_user});
 			});
 	}
 }

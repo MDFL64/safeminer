@@ -1,0 +1,50 @@
+<%- include('partial/header.html', {title: "Register"}) %>
+
+<div class="section"></div>
+
+<div class="z-depth-5 blue-grey darken-2 round " style="padding-right: 20px; padding-left: 20px; padding-top: 0px;">
+<form method="post">
+  <div class="section"></div>
+  <a class="btn left-align yellow darken-2" href="login.html"><span class="grey-text text-darken-2">Return to login</span></a>
+  <h2 class="white-text center-align">SafeMine Registration</h2>
+  <h3 class="grey-text center-align">Please register below</h3>
+
+  <div class="row">
+    <div class="input-field col s12 m6">
+      <input class='validate white-text' type='text' name='Name' id='Name' required="" value="<%= locals.user && locals.user.Name %>" />
+      <label for='Name'>Name</label>
+    </div>
+
+  
+  <!--<div class='input-field col s12 m6'>
+    <input class='validate white-text' type='number' name='empID' id='empID' />
+    <label for='empID'>Employee ID</label>
+  </div></div>-->
+
+    <div class="input-field col s12 m6">
+      <input class='validate white-text' type='email' name='Email' id='Email' required="" value="<%= locals.user && locals.user.Email %>" />
+      <label for='Email'>Email</label>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class='input-field col s12 m6'>
+      <input class='validate white-text' type='password' name='Password' id='Password' required="" />
+      <label for='Password'>Password</label>
+    </div>
+
+  
+    <div class="input-field col s12 m6">
+      <input class='validate white-text' type='text' name='Position' id='Position' required="" value="<%= locals.user && locals.user.Position %>" />
+      <label for='Position'>Job Title</label>
+    </div>
+  </div>
+
+  <div class="row input-field">
+    <button type='submit' name='btn_login' style="margin-bottom: 30px;" name='btn_login' class='col s4 offset-s4 btn btn-large waves-effect yellow darken-2 center'><span class="grey-text text-darken-1">Register</span></button>
+  </div>
+</form>
+</div>
+</div>
+
+<%- include('partial/footer.html', {}); %>
