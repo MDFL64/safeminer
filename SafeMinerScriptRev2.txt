@@ -1,0 +1,85 @@
+
+
+Introduction:
+
+
+Introduce Team and problem we're working on
+Cut down challenge cut in half
+Speak slower
+NAME
+Leave potential for last slide
+Extra ipad
+
+
+[slide 1]
+
+Hey I'm Kip DeCastro, here with team Cowboys: Adam, Batyr and Hunter.
+
+We're from the University of Wyoming and we're excited to be here today to show you our solution to the Safety Challenge.
+
+In the past, Barrick has tried various methods to help employees be mindful of the risks of the job and analyze their situation, but existing tools are not sufficient and frankly, suck.
+
+You can fill out as many of the current risk analyses as you want, but do you think employees really want to fill out one of these bad boys?
+
+[slide 2]
+
+With all the charm of dmv paperwork. 
+
+There's a million different ways that injuries can and do happen at a mine site that could be mitigated with a better way for employees to analyze risk.
+
+Current risk assessments are:
+	. Boring
+	. A hassle
+	. Lacks incentivization
+	. Is difficult to parse.
+
+Meaning that no meaningful data can be extracted from these unweighted metrics on the current flras.
+
+I am so happy to be in front of you here today and proudly proclaim that there is a solution. 
+
+Allow us to present SafeMine
+
+[slide 3: home page]
+
+SafeMine is a platform that takes the tedium out of safety awareness.
+
+[Begin entering in a safety report]
+
+Its quick and familiar UI makes it easy and intuitive for employees to enter in detailed data about the hazards around them.
+
+[End entering safety report, move to safety radar]
+
+Automatic geotagging and detailed reports blend together beautifully in our Safety Radar interface, notifying them of hazards present within 20 meters.
+
+[End safety radar, move to supervisor view and analytics]
+
+Supervisors have an automagically generated layout of the risks and hazards at the site, allowing them to quickly identify existing chokepoints and develop better routing and jobsite layout.
+
+[end analytics, move to employee profile]
+
+I talked earlier about incentivization. There are benefits to analyzing the risks around where you're working, but current RA provides no means of tracking frequency of analysis nor does it provide an easy way for the company to reward thoughtful, risk aware employees. 
+
+Our incentivization solution leverages people's natural competitiveness to encourage participation and adoption of SafeMine. 
+
+SafeMine keeps track through a point system of the number and depth of risk assessments per employee, allowing employees to demonstrate their commitment to safety and for the company to award them for it.
+
+[Move to logo page]
+
+Job safety, while essential, will never be sexy or exciting, but we can make it less tedious and more effective.
+
+Gold mining is expensive, and I'm sure that you at Barrick are aware that a huge part of that cost comes from the machines literally tearing themselves apart.
+
+We have a responsibility to ensure that hard rock mining does not tear our employees apart as well.
+
+Implementing SafeMine brings us not steps, but leaps closer to a future where every Joe Dozer Operator goes home safe.
+
+[Move to future steps]
+
+We're very proud of what we've accomplished in the past 48 hours, and we're excited to see what it becomes as development continues.
+
+Our goal in future implementations is to make safemine a more automatic and comprehensive system.
+
+SafeMine will remember common hazards you encounter, as well as provide standard operating procedures for remedying those hazards.
+
+We plan to have role specific assessments, such as, for Joe Dozer Operator, equipment walk arounds.
+
