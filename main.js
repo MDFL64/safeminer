@@ -1,8 +1,12 @@
 "use strict";
-const express    = require("express");
-const bodyParser = require("body-parser");
-const mongodb    = require("mongodb");
-const ObjectID   = mongodb.ObjectID;
+const express       = require("express");
+const bodyParser    = require("body-parser");
+const mongodb       = require("mongodb");
+const ObjectID      = mongodb.ObjectID;
+const passport      = require("passport");
+const LocalStrategy = require("passport-local");
+const session       = require('express-session');
+const bcrypt        = require("bcrypt");
 
 /* Exports */
 const users   = require('./routes/users');
@@ -21,10 +25,43 @@ const app = express();
 /*    Middlewares   */
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + "/public"));
+app.use(session({
+    secret: "XhJOwU2yBkHdYAMNvkA2",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { /*secure: true requires https*/ }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 /*   DB connection  */
 const mongodb_uri = process.env.MONGODB_URI;
 let db;
+
+/* Passport */
+passport.use(new LocalStrategy({
+        usernameField: 'Email',
+        passwordField: 'Password',
+        passReqToCallback: true,
+        session: false
+    },
+    function(req, email, pass, done) {
+        db.collection("users").findOne({"Email": email}, function(err,user) {
+            if (err) { return done(err); }
+            if (!user) { return done(null,false); }
+            if (!bcrypt.compare(pass,user.Password)) { return done(null,false); }
+            return done(null, user);
+        });
+    }
+));
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
 
 /* Connect to the database before starting the application server */
 mongodb.MongoClient.connect(mongodb_uri, (err, database) => {
@@ -67,3 +104,10 @@ app.post('/api/users', users.post_users);
 app.get('/api/reports', reports.get_safetycard_all);
 app.get('/api/reports/:id', reports.get_safetycard_one);
 app.post('/api/reports', reports.post_safetycard)
+
+app.post('/api/login', 
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res) {
+        res.redirect('/');
+    }
+);
