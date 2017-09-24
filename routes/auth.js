@@ -1,7 +1,18 @@
 "use strict";
 const bcrypt = require("bcrypt");
 
-module.exports.register = (req, res) => {
+
+module.exports.get_login = (req, res) => {
+	res.render("../public/login.html");
+}
+
+
+module.exports.get_register = (req, res) => {
+  res.render("../public/registration.html");
+}
+
+
+module.exports.post_register = (req, res) => {
 	const db = req.db;
 
 	const EMAIL_REGEXP = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
