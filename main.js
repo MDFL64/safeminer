@@ -30,7 +30,7 @@ app.engine('html', require('ejs').renderFile);
 
 /*    Middlewares   */
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded());
 app.use('/', express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({
@@ -132,9 +132,13 @@ function checkAuthentication(req, res, next) {
 
 /*   Routes!   */
 
-/* Views */
+/* Misc Views */
 app.get("/home",function(req,res) {
-  res.render("home.html",{});
+  var welcome;
+  console.log(req.user);
+  if (req.user)
+    welcome = "Welcome, "+req.user.Name+". You have "+req.user.Points+" Safety Points.";
+  res.render("home.html",{msg: welcome});
 });
 
 /* Reports */
@@ -147,9 +151,10 @@ app.get('/api/auth/register', auth.get_register);
 app.post('/api/auth/register', auth.post_register);
 app.get('/api/auth/login', auth.get_login);
 app.post('/api/auth/login',
-    passport.authenticate('local', { failureRedirect: '/login.html' }),
-    function(req, res) {
-        res.redirect('/');
+    passport.authenticate('local', { successRedirect: '/',failWithError: true }),
+    function(err, req, res, next) {
+      console.log("failure!",err);
+      return res.render("login.html",{msg: "Incorrect email/password."})
     }
 );
 

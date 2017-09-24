@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>SafeMine | | <%- title %></title>
+	<title>SafeMine | <%- title %></title>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" type="text/css" href="/assets/kipsisababy.css">
   <link rel="stylesheet" href="/assets/materialize.min.css">
@@ -47,3 +47,6 @@
    
       </div>
     </nav>
+    <% if (locals.msg) { %>
+      <div class="yellow darken-2" style="padding: 10px; border-radius: 2px;"><%= locals.msg %></div>
+    <% } %>

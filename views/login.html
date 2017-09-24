@@ -1,0 +1,39 @@
+<%- include('partial/header.html', {title: "Register"}) %>
+
+<div class="section"></div>
+
+<div class="z-depth-5 blue-grey darken-2 round   center-align" style="padding-right: 20px; padding-left: 20px; padding-top: 0px;">
+  <form method="post" action="/api/auth/login">
+    <div class="section"></div>
+    <h2 class="white-text">SafeMine Login</h2>
+
+    <div clas="row">
+    <div class="input-field col s12">
+      <input class='validate white-text' type='email' name='Email' id='Email' />
+      <label for='Email'>Enter your email</label>
+    </div></div>
+
+    <div class='input-field col s12'>
+      <input class='validate white-text' type='password' name='Password' id='Password' />
+      <label for='Password'>Enter your password</label>
+    </div>
+    <div class="row">
+    <label style='float: right;'>
+      <a class='white-text text-darken-2 right-align' href='lostpassword.html'><b>Forgot Password?</b></a>
+    </label>
+  </div>
+
+
+  <div class="row">
+
+    <a class="col s12 m4 offset-m1 btn btn-large waves-effect yellow darken-2" href="register">Register</a>
+
+    <button type='submit' name='btn_login' class='col s12 m4 offset-m2 btn btn-large waves-effect yellow darken-2'><span class="grey-text text-darken-1">Login</span></button>
+  </div>
+
+  <div class="section"></div>
+
+  </form>
+</div>
+
+<%- include('partial/footer.html', {}); %>
