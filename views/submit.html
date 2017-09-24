@@ -540,7 +540,7 @@
           url: "/api/submit",
           data: JSON.stringify(request),
           success: function(data) { console.log("success", data); window.location = "/api/reports" },
-          error: function(err) { console.log("error", err); window.location = "/api/auth/login"; }
+          error: function(err) { console.log("error", err); window.location = "/api/reports"; }
       });
   }
 </script>
