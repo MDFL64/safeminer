@@ -32,7 +32,7 @@ app.engine('html', require('ejs').renderFile);
 /*    Middlewares   */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use('/', express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({
     secret: "XhJOwU2yBkHdYAMNvkA2",
@@ -109,8 +109,7 @@ app.all('*', (req, res, next) => {
 });
 
 // Add user locals
-app.use(function(req,res,next) {
-  console.log(req.user);
+app.use(function(req,res,next) {  
   res.locals.user = req.user;
   next();
 });
@@ -139,6 +138,10 @@ function checkAuthentication(req, res, next) {
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 /*   Routes!   */
+app.get('/', checkAuthentication, (req, res) => {
+  res.render('index.html');
+})
+
 
 /* Misc Views */
 app.get("/about",function(req,res) {
@@ -166,7 +169,7 @@ app.get('/api/user/details', checkAuthentication, users.get_user_details);
 
 
 /* Safety radar */
-app.get('/api/radar', radar.get_radar_page);
-app.get('/api/radar/active', radar.get_active_hazards);
-app.post('/api/radar', radar.post_ongoing_hazard);
-app.put('/api/radar/:id', radar.deactive_ongoing_hazard);
+app.get('/api/radar', checkAuthentication, radar.get_radar_page);
+app.get('/api/radar/active', checkAuthentication, radar.get_active_hazards);
+app.post('/api/radar', checkAuthentication, radar.post_ongoing_hazard);
+app.put('/api/radar/:id', checkAuthentication, radar.deactive_ongoing_hazard);
