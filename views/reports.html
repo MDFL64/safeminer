@@ -1,0 +1,30 @@
+<%- include('partial/header.html', {title: "About"}); %>
+
+<!-- TODO: Add card so this looks less ugly -->
+<div class="parallax-container">
+    <div class="parallax"><img class="responsive-img" src="https://static.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg"></div>
+    </div>
+    
+    <h3>Create or review safety reports</h3>
+    <a class="waves-effect waves-light btn yellow darken-1" href="index.html"><i class="material-icons left">create</i><span class="grey-text text-darken-2">Create new Safety Report</span></a><br><br>
+    <div class="section">
+        <h3>Your safety reports</h3>
+        <div class="divider"></div><br>
+        <div class="row">
+            <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                <span class="card-title">Welding on Pipe</span>
+                <p>Risks: Slip, Fire, Sharp Edges</p>
+                </div>
+                <div class="card-action">
+                <a href="#">View Report</a>
+                <a href="#">Edit Report</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partial/footer.html', {}); %>
