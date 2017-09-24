@@ -109,7 +109,7 @@ app.all('*', (req, res, next) => {
 });
 
 // Add user locals
-app.use(function(req,res,next) {  
+app.use(function(req,res,next) {
   res.locals.user = req.user;
   next();
 });
@@ -156,7 +156,7 @@ app.get("/about",function(req,res) {
 /* Reports */
 app.get('/api/reports', checkAuthentication, reports.get_safetycard_all);
 app.get('/api/reports/:id', checkAuthentication, reports.get_safetycard_one);
-app.post('/api/reports', reports.post_safetycard);
+app.post('/api/reports', checkAuthentication, reports.post_safetycard);
 
 /* Authentication */
 app.get('/api/auth/register', auth.get_register);
@@ -165,7 +165,7 @@ app.get('/api/auth/login', auth.get_login);
 app.post('/api/auth/login',
     passport.authenticate('local', { successRedirect: '/',failWithError: true }),
     function(err, req, res, next) {
-      return res.render("login.html",{msg: "Incorrect email/password."})
+      res.render("login.html", { msg: "Incorrect email/password." });
     }
 );
 
@@ -174,7 +174,6 @@ app.get('/api/user/details', checkAuthentication, users.get_user_details);
 
 
 /* Safety radar */
-app.get('/api/radar', checkAuthentication, radar.get_radar_page);
-app.get('/api/radar/active', checkAuthentication, radar.get_active_hazards);
+app.get('/api/radar', checkAuthentication, radar.get_active_hazards);
 app.post('/api/radar', checkAuthentication, radar.post_ongoing_hazard);
 app.put('/api/radar/:id', checkAuthentication, radar.deactive_ongoing_hazard);

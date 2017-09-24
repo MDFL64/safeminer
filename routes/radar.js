@@ -2,10 +2,6 @@ const ObjectID = require('mongodb').ObjectID;
 
 const HAZARDS_COLLECTION = "hazards";
 
-module.exports.get_radar_page = (req, res) => {
-  res.render("../public/radar.html");
-}
-
 module.exports.post_ongoing_hazard = (req, res) => {
   const db = req.db;
 
@@ -52,9 +48,7 @@ module.exports.post_ongoing_hazard = (req, res) => {
         }
       )
       .then(result => {
-        res.status(200).send({
-          HazardID : result.ops[0]._id
-        })
+        res.status(200).render('radar.html', { result: result.ops[0] })
       })
       .catch(error => {
         res.status(500).send({
@@ -93,14 +87,13 @@ module.exports.deactive_ongoing_hazard  = (req, res) => {
       )
       .then(result => {
         if (!result.matchedCount) {
-          res.status(404).send({
-            success: false,
-            message: "Not found or already eliminated"
-          })
+          res.status(404).render('radar.html', {
+            result: "Hazard is not found or has already been deactivated"
+          });
         }
         else {
-          res.status(200).send({
-            success: "Hazard is deactivated"
+          res.status(200).render('radar.html', {
+            result: "Hazard is deactivated"
           });
         }
       })
@@ -124,7 +117,9 @@ module.exports.get_active_hazards = (req, res) => {
     ])
     .toArray()
     .then(hazards => {
-      res.status(200).send(hazards);
+      res.status(200).render('radar.html', {
+        result: hazards
+      });
     })
     .catch(error => {
       res.status(500).send({
