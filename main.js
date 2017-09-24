@@ -132,6 +132,11 @@ function checkAuthentication(req, res, next) {
 
 /*   Routes!   */
 
+/* Views */
+app.get("/home",function(req,res) {
+  res.render("home.html",{});
+});
+
 /* Reports */
 app.get('/api/reports', checkAuthentication, reports.get_safetycard_all);
 app.get('/api/reports/:id', checkAuthentication, reports.get_safetycard_one);
