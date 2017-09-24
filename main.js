@@ -32,7 +32,7 @@ app.engine('html', require('ejs').renderFile);
 /*    Middlewares   */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use('/', express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 app.use(require('cookie-parser')());
 app.use(session({
     secret: "XhJOwU2yBkHdYAMNvkA2",
@@ -109,8 +109,7 @@ app.all('*', (req, res, next) => {
 });
 
 // Add user locals
-app.use(function(req,res,next) {
-  console.log(req.user);
+app.use(function(req,res,next) {  
   res.locals.user = req.user;
   next();
 });
@@ -139,6 +138,10 @@ function checkAuthentication(req, res, next) {
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 /*   Routes!   */
+app.get('/', checkAuthentication, (req, res) => {
+  res.render('index.html');
+})
+
 
 /* Misc Views */
 app.get("/about",function(req,res) {
