@@ -133,12 +133,12 @@ function checkAuthentication(req, res, next) {
 /*   Routes!   */
 
 /* Misc Views */
-app.get("/home",function(req,res) {
+app.get("/about",function(req,res) {
   var welcome;
-  console.log(req.user);
+
   if (req.user)
     welcome = "Welcome, "+req.user.Name+". You have "+req.user.Points+" Safety Points.";
-  res.render("home.html",{msg: welcome});
+  res.render("about.html",{msg: welcome});
 });
 
 /* Reports */
