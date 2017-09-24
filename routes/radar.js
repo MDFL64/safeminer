@@ -131,26 +131,52 @@ module.exports.get_active_hazards = (req, res) => {
 }
 
 
-// module.exports.get_local_hazard = (req, res) => {
-//   const db = req.db;
-//
-//
-//
-//   db.collection(HAZARDS_COLLECTION)
-//     .find(
-//       {
-//         isActive: true,
-//         <location field>: {
-//           $near: {
-//             $geometry: {
-//               type: "Point" ,
-//               coordinates: [ <longitude> , <latitude> ]
-//             },
-//             $maxDistance: <distance in meters>,
-//             $minDistance: <distance in meters>
-//           }
-//         }
-//       }
-//     )
-//
-// }
+module.exports.get_local_hazard = (req, res) => {
+  const db = req.db;
+
+  const longitude = Number(req.query.Longitude);
+  const latitude  = Number(req.query.Latitude);
+  const distance  = Number(req.query.Distance);
+
+  const meter2mile_factor = 0.000621371;
+
+  if (!distance) {
+    res.status(400).send({
+      success: false,
+      message: "Distance not specified"
+    })
+  }
+  else if (!longitude || !latitude) {
+    res.status(400).send({
+      success: false,
+      message: "Wrong longitude / latitude format"
+    });
+  }
+  else {
+    db.collection(HAZARDS_COLLECTION)
+      .find(
+        {
+          isActive: true,
+          Geolocation: {
+            $geoWithin: {
+              $centerSphere: [
+                [ longitude, latitude ],
+                distance * meter2mile_factor  / 3963.2
+              ]
+            }
+          }
+        }
+      )
+      .toArray()
+      .then(hazards => {
+        res.status(200).send(hazards);
+      })
+      .catch(error => {
+        res.status(500).send({
+          success: false,
+          error  : error.message
+        });
+      });
+  }
+
+}
