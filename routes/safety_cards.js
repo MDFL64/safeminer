@@ -87,7 +87,7 @@ module.exports.post_safetycard = (request, response) => {
     const job_name = request.body.JobName;
     const job_description = request.body.JobDescription;
     const dangers = request.body.Dangers;
-    const geolocation = request.body.Geolocation || null;
+    const geolocation = request.body.Geolocation;
 
     if (!ObjectID.isValid(employee_id)) {
       res.status(400).send({
@@ -113,6 +113,12 @@ module.exports.post_safetycard = (request, response) => {
         message: "Invalid safety card"
       });
     }
+    else if (!geolocation.Longitude || !geolocation.Latitude) {
+      res.status(400).send({
+        success: false,
+        message: "Invalid geolocation"
+      });
+    }
     else {
       // find user first -> if exists - ok, if not - error
       db.collection("users")
@@ -135,7 +141,13 @@ module.exports.post_safetycard = (request, response) => {
                 JobName: job_name,
                 JobDescription: job_description,
                 Dangers: dangers,
-                Geolocation: geolocation,
+                Geolocation: {
+                  type: "Point",
+                  coordinates: [
+                    Geolocation.Longitude,
+                    Geolocation.Latitude
+                  ]
+                },
                 isDeleted: false
             };
 
