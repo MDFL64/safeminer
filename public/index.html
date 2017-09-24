@@ -613,7 +613,7 @@
       $.ajax({
           type: "POST",
           contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-          url: "http://safemine-dev.herokuapp.com/api/login",
+          url: "http://safemine-dev.herokuapp.com/api/oath/login",
           data: jQuery.param({ Email: "admin@admin.com", Password: "admin1" }),
           success: function (response) {
               alert(response.status);
